@@ -116,6 +116,10 @@ iframe {
     font-size: 1.15rem;
   }
 
+  h3 {
+    font-size: 1rem;
+  }
+
   nav {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
