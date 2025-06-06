@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Schedule – Misha Lantsov</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Schedule</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .cal-link {
+      font-weight: bold;
+      font-size: 1.1rem;
+      font-family: Georgia, serif;
+      color: #0066cc;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .cal-link:hover {
+      color: #003366;
+    }
+  </style>
 </head>
-
-<script src="wave.js"></script>
-
 <body>
 
   <nav>
@@ -25,20 +34,75 @@
 
   <h1>Schedule a Session</h1>
 
-  <p>Use the tool below to schedule a call with me. I currently take calls most of the day on Wednesdays and plan sessions for bodywork and training manually.</p>
+  <p>
+    You can 
+    <span class="cal-link" data-cal-link="mikhail-lantsov-uwzbwz/bodywork" data-cal-namespace="bodywork-session" data-cal-config='{"layout":"month_view"}'>
+      schedule a therapeutic bodywork appointment
+    </span> 
+    with me in downtown Golden, or 
+    <span class="cal-link" data-cal-link="mikhail-lantsov-uwzbwz/movement-training" data-cal-namespace="movement-training-session" data-cal-config='{"layout":"month_view"}'>
+      one-on-one movement training
+    </span> 
+    at a location of our choosing.
+  </p>
 
-  <!-- Calendly inline widget -->
-<div class="calendly-wrapper">
-  <iframe src="https://calendly.com/misha-mishalantsov/30min"
-          frameborder="0"
-          allowfullscreen>
-  </iframe>
-</div>
+  <!-- Cal embed script -->
+  <script type="text/javascript">
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
 
+    Cal("init", "bodywork-session", { origin: "https://cal.com" });
+    Cal("init", "movement-training-session", { origin: "https://cal.com" });
 
+    Cal.ns["bodywork-session"]("ui", { layout: "month_view" });
+    Cal.ns["movement-training-session"]("ui", { layout: "month_view" });
+  </script>
 
+<h1>Check out a group class</h1>
+<p>
+  I currently run a 
+  <a href="https://chat.whatsapp.com/your-sprint-study-group-link" target="_blank" rel="noopener noreferrer">sprint study group</a>
+  with the overarching theme of 
+  <a href="energy-systems.html">Energy Systems</a>
+  in Lakewood, help coordinate a 
+  <a href="https://chat.whatsapp.com/your-bjj-group-link" target="_blank" rel="noopener noreferrer">BJJ group</a>
+  that's training using 
+  <a href="ecological-dynamics.html">Ecological Dynamics principles</a>,
+  and teach group movement classes at 
+  <a href="https://apecomovement.com" target="_blank" rel="noopener noreferrer">ApeCo in Edgewater</a> through July.
+</p>
+ 
+  <p>
+    If you want to join any of these groups, please reach out to me via 
+    <a href="contact.html">the contact page</a> and I can help you get set up.
+  </p>
 
-  <p>If you're unsure where to start, you can <a href="contact.html">reach out first</a>.</p>
-
+  <footer>
+    <p>© 2025 Misha Lantsov</p>
+  </footer>
 </body>
 </html>
