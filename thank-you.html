@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thank You – Movement Study Cohort</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .thankyou { max-width: 900px; margin: 3rem auto; padding: 1.5rem; text-align: center; }
+    .thankyou h1 { margin: 0 0 0.25rem; }
+    .thankyou h2 { margin: 0.25rem 0 1rem; }
+    .meta { color:#444; margin-bottom: 1rem; }
+    .next-steps { margin: 1rem 0 0.5rem; font-weight: 600; }
+    .buttons { display:flex; justify-content:center; gap:0.75rem; flex-wrap:wrap; margin: 0.5rem 0 1rem; }
+    .button { padding: 0.55rem 1rem; background:#111; color:#fff; text-decoration:none; border-radius:6px; }
+    .button.secondary { background:#e5e7eb; color:#111; }
+    .calendar-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .calendar-wrap iframe {
+      display:block;
+      width: 100%;
+      height: 680px; /* month view "box" */
+      border: 0;
+    }
+    @media (max-width: 768px){ .calendar-wrap iframe { height: 560px; } }
+    @media (max-width: 480px){ .calendar-wrap iframe { height: 480px; } }
+  </style>
+</head>
+<body>
+  <div class="thankyou">
+    <h1>Thank you for enrolling!</h1>
+    <p class="meta">Payment received. You’re registered for:</p>
+    <h2 id="cohort-title">Movement Study Cohort</h2>
+    <p id="cohort-details"></p>
+
+    <div id="steps">
+      <div class="next-steps">Next steps</div>
+      <div class="buttons" id="links">
+        <!-- buttons injected by JS -->
+      </div>
+    </div>
+
+    <div class="calendar-card">
+      <div class="calendar-wrap" id="gc-wrap">
+        <!-- calendar iframe injected by JS -->
+      </div>
+    </div>
+
+    <p style="margin-top:1rem;"><a href="index.html">← Return to main site</a></p>
+  </div>
+
+  <script>
+    // CONFIG — Google Calendar IDs (URL-encoded: "@" -> "%40")
+    // Replace whatsappInvite values with your real WhatsApp group invite links.
+    const CONFIG = {
+      timezone: "America%2FDenver",
+      view: "MONTH", // MONTH view "box"
+      cohorts: {
+        "environmental-practice": {
+          title: "Environmental Practice: Lightness, Balance, Preparedness",
+          schedule: "Mon & Wed, 7:00–8:30 AM · Sep 1 – Oct 29",
+          location: "Details to follow by email and are located in the WhatsApp group description",
+          calIdEncoded: "c_27bcff9538ee7a6f394b856879bab74566aeb571553250e46e6fbf1f0b6dacf3%40group.calendar.google.com",
+          color: "%23039BE5",
+          whatsappInvite: "https://chat.whatsapp.com/HGD2IMqaUei7Ix6wxFovXR?mode=ems_copy_c"
+        },
+        "foundations": {
+          title: "Foundations of a Movement Practice",
+          schedule: "Tue & Thu, 5:00–6:30 PM · Sep 2 – Sep 25",
+          location: "125 S Sherman Street, Denver, CO 80209. More details to follow by email and are also located in the WhatsApp group description",
+          calIdEncoded: "c_fd767ceddab647fa3725dd4372b936fb925e8731cc47f5eea209a7281aca72fc%40group.calendar.google.com",
+          color: "%234285F4",
+          whatsappInvite: "https://chat.whatsapp.com/HGD2IMqaUei7Ix6wxFovXR?mode=ems_copy_c"
+        },
+        "presence-therapeutics": {
+          title: "Presence and Therapeutics: Partner Bodywork & Self-Treatment",
+          schedule: "6 Saturdays in Sept (6th, 13th, 20th) and Oct (4th, 11th, 18th), 12:00–1:30 PM",
+          location: "125 S Sherman Street, Denver, CO 80209. More details to follow by email and are also located in the WhatsApp group description",
+          calIdEncoded: "c_bcd5fa794857bf4e3d34112dc68a97693e6d8bb12e46578d239ff649633fce76%40group.calendar.google.com",
+          color: "%23D81B60",
+          whatsappInvite: "https://chat.whatsapp.com/HGD2IMqaUei7Ix6wxFovXR?mode=ems_copy_c"
+        }
+      }
+    };
+
+    function q(name){ return new URLSearchParams(location.search).get(name); }
+
+    const slug = q("cohort") || q("c");
+    const cfg  = slug && CONFIG.cohorts[slug] ? CONFIG.cohorts[slug] : null;
+
+    const titleEl   = document.getElementById("cohort-title");
+    const detailsEl = document.getElementById("cohort-details");
+    const linksEl   = document.getElementById("links");
+    const wrapEl    = document.getElementById("gc-wrap");
+
+    if (cfg) {
+      titleEl.textContent = cfg.title;
+      detailsEl.innerHTML = "<strong>Schedule:</strong> " + cfg.schedule + "<br><strong>Location:</strong> " + cfg.location;
+
+      // Build buttons ABOVE the calendar
+      const publicUrl = "https://calendar.google.com/calendar/u/0?cid=" + cfg.calIdEncoded;
+
+      let btns = '';
+      btns += '<a class="button" href="' + (cfg.whatsappInvite || '#') + '" target="_blank" rel="noopener">Join WhatsApp Group</a>';
+      btns += '<a class="button secondary" href="' + publicUrl + '" target="_blank" rel="noopener">Add to Google Calendar</a>';
+      linksEl.innerHTML = btns;
+
+      // Calendar iframe (MONTH, boxed)
+      const src =
+        "https://calendar.google.com/calendar/embed"
+        + "?height=680"
+        + "&wkst=1"
+        + "&bgcolor=%23ffffff"
+        + "&ctz=" + CONFIG.timezone
+        + "&mode=" + CONFIG.view
+        + "&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showTz=0&showCalendars=0"
+        + "&src=" + cfg.calIdEncoded
+        + (cfg.color ? ("&color=" + cfg.color) : "");
+
+      const iframe = document.createElement("iframe");
+      iframe.title = "Cohort Calendar";
+      iframe.loading = "lazy";
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("scrolling", "no");
+      iframe.style.border = "0";
+      iframe.style.width = "100%";
+      iframe.style.height = "680px";
+      iframe.src = src;
+      wrapEl.appendChild(iframe);
+
+    } else {
+      titleEl.textContent = "Your Cohort";
+      detailsEl.textContent = "If you reached this page directly, your cohort wasn’t specified.";
+    }
+  </script>
+</body>
+</html>
