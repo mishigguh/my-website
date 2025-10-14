@@ -2,139 +2,126 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Movement Study Cohort</title>
   <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Continued education for practitioners seeking a shared movement practice: Environmental Movement Practice and Movement & Strength cohorts." />
   <style>
+    :root { --brand:#0074cc; --ink:#111; --muted:#444; --bg:#fff; --panel:#f9f9f9; }
+    html,body { height:100%; }
     body {
-      background: white;
-      color: #111;
-      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       max-width: 800px;
       margin: 0 auto;
-      padding: 2rem;
-      line-height: 1.6;
+      padding: 1.5rem;
+      line-height: 1.65;
     }
-    h1, h2, h3 {
-      font-weight: 600;
-      line-height: 1.3;
-    }
-    .section {
-      margin-bottom: 3rem;
-    }
-    .cohort-options {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
+    @media (min-width: 640px) { body { padding: 2rem; } }
+    h1, h2, h3 { font-weight: 600; line-height: 1.25; }
+    .section { margin-bottom: 3rem; }
+    .nav-links { margin: 0 0 1.25rem; font-size: 0.95rem; }
+    .nav-links a { margin-right: 1rem; color: var(--muted); text-decoration: none; }
+    .nav-links a:hover { text-decoration: underline; }
+
+    .cohort-options { display: grid; gap: 1.5rem; }
+    @media (min-width: 640px) { .cohort-options { grid-template-columns: 1fr; } }
     .cohort-box {
-      border-left: 4px solid #0074cc;
-      background: #f9f9f9;
-      padding: 1rem 1.5rem;
-      border-radius: 6px;
+      border-left: 4px solid var(--brand);
+      background: var(--panel);
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
     }
-    .cohort-box h3 {
-      margin: 0 0 0.5rem;
-    }
+    .cohort-box h3 { margin: 0 0 0.5rem; }
+    .cohort-box p { margin: 0.25rem 0 0.75rem; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     a.button {
       display: inline-block;
-      margin-top: 0.75rem;
-      background: #0074cc;
-      color: white;
-      padding: 0.4rem 0.9rem;
-      border-radius: 4px;
+      background: var(--brand);
+      color: #fff;
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
       text-decoration: none;
       font-size: 0.95rem;
     }
-    a.button:hover {
-      background: #005fa3;
-    }
-    .nav-links {
-      margin: 2rem 0 1rem;
-      font-size: 0.95rem;
-    }
-    .nav-links a {
-      margin-right: 1rem;
-      color: #444;
-      text-decoration: none;
-    }
-    .nav-links a:hover {
-      text-decoration: underline;
+    a.button:hover { filter: brightness(0.95); }
+
+    .calendar-wrap iframe {
+      border: 0;
+      width: 100%;
+      height: 680px;
     }
   </style>
 </head>
-
-<script src="wave.js"></script>
-
 <body>
-   <div class="nav-links">
+  <nav class="nav-links" aria-label="Breadcrumb">
     <a href="index.html">← Back to Main Page</a>
-  </div>
+  </nav>
 
-</div>
   <main>
     <h1>Movement Study Cohort</h1>
 
-    <div class="section">
-      <p>This is continued education for practitioners seeking a shared movement practice. Process oriented skill building, understanding, and exploration. Full calendar and WhatsApp below.
-</p>
+    <div class="section" id="intro">
+      <p>
+        Continued education for practitioners seeking a shared movement practice.
+        Process-oriented skill building, understanding, and exploration. Full calendar and WhatsApp below.
+      </p>
     </div>
 
-    <div class="section">
+    <div class="section" id="enrollment">
       <h2>Cohort Enrollment Options</h2>
       <div class="cohort-options">
+        <!-- Environmental Movement Practice -->
         <div class="cohort-box">
-          <h3>Environmental Practice</h3>
-          <p>Lightness skills, balance, and physical preparedness. <br>September 1st - October 29th. <br> 8-week, 16 session outdoor cohort meeting Mondays & Thursdays, 7:00–8:30am.</p>
-          <a class="button" href="https://square.link/u/Qw9LtM9x" target="_blank" rel="noopener">Join This Cohort</a>
+          <h3>Environmental Movement Practice</h3>
+          <p>
+            Lightness skills, balance, and physical preparedness.<br>
+            October 27 – December 18. 8-week, 16-session outdoor cohort meeting Mondays & Thursdays, 7:00–8:30am.
+          </p>
+          <div class="buttons">
+            <a class="button" href="https://square.link/u/Qw9LtM9x" target="_blank" rel="noopener noreferrer">Cohort Sign Up</a>
+            <a class="button" href="https://square.link/u/iKXMqJUn" target="_blank" rel="noopener noreferrer">Drop In</a>
+            <a class="button" href="https://square.link/u/3bb09acU" target="_blank" rel="noopener noreferrer">5 Pack</a>
+            <a class="button" href="https://square.link/u/s5gtX7mg" target="_blank" rel="noopener noreferrer">12 Pack</a>
+          </div>
         </div>
 
+        <!-- Movement and Strength -->
         <div class="cohort-box">
-          <h3>Presence and Therapeutics</h3>
-          <p>Partner bodywork, inner practice, and self-treatment with roll to release. <br>6 Saturdays in Sept (6th, 13th, 20th) and Oct (4th, 11th, 18th), 12:00–1:30pm.</p>
-          <a class="button" href="https://square.link/u/5I2JHnvo" target="_blank" rel="noopener">Join This Cohort</a>
+          <h3>Movement and Strength</h3>
+          <p>
+            Physical preparedness, partnering work, and fundamentals of an embodied learning process.<br>
+            5:30pm–6:50pm at the Wiggelrhum (125 S Sherman St, Denver).
+          </p>
+          <div class="buttons">
+            <a class="button" href="https://square.link/u/iKXMqJUn" target="_blank" rel="noopener noreferrer">Drop In</a>
+            <a class="button" href="https://square.link/u/3bb09acU" target="_blank" rel="noopener noreferrer">5 Pack</a>
+            <a class="button" href="https://square.link/u/s5gtX7mg" target="_blank" rel="noopener noreferrer">12 Pack</a>
+          </div>
         </div>
-
-        <div class="cohort-box">
-          <h3>Foundations of a Movement Practice</h3>
-          <p>Physical preparedness, partnering work, and fundamentals of an embodied learning process. <br>September 9th - October 2nd, 8 sessions on Tuesdays & Thursdays, 5:30–6:30pm.</p>
-          <a class="button" href="https://square.link/u/rfBGjydX" target="_blank" rel="noopener">Join This Cohort</a>
-        </div>
-
-        <div class="cohort-box">
-          <h3>Drop-ins and Passes</h3>
-          <p>Drop ins are usable for any of the cohorts.</p>
-          <p>Prices are scaled to $20 for 1 drop in, $15/class at 5-pack, $10/class at 12-pack </p>
-          <a class="button" href="https://square.link/u/iKXMqJUn" target="_blank" rel="noopener">Single day</a>
-          <a class="button" href="https://square.link/u/3bb09acU" target="_blank" rel="noopener">5 pack</a>
-          <a class="button" href="https://square.link/u/s5gtX7mg" target="_blank" rel="noopener">12 pack</a>
-        </div>
-        
       </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="schedule">
       <h2>Schedule (All Cohorts)</h2>
       <div class="calendar-wrap">
         <iframe
           title="All Cohorts Calendar"
-          style="border:0"
-          width="100%"
-          height="680"
-          frameborder="0"
-          scrolling="no"
           loading="lazy"
-          src="https://calendar.google.com/calendar/embed?height=680&wkst=1&bgcolor=%23ffffff&ctz=America%2FDenver&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showTz=0&showCalendars=0&src=c_27bcff9538ee7a6f394b856879bab74566aeb571553250e46e6fbf1f0b6dacf3%40group.calendar.google.com&color=%23039BE5&src=c_fd767ceddab647fa3725dd4372b936fb925e8731cc47f5eea209a7281aca72fc%40group.calendar.google.com&dates=20250901/20250930&color=%234285F4&src=c_bcd5fa794857bf4e3d34112dc68a97693e6d8bb12e46578d239ff649633fce76%40group.calendar.google.com&color=%23D81B60">
-          
+          scrolling="no"
+          src="https://calendar.google.com/calendar/embed?height=680&wkst=1&bgcolor=%23ffffff&ctz=America%2FDenver&mode=MONTH&showTitle=0&showNav=1&showDate=1&showPrint=0&showTabs=0&showTz=0&showCalendars=0&src=c_27bcff9538ee7a6f394b856879bab74566aeb571553250e46e6fbf1f0b6dacf3%40group.calendar.google.com&color=%23039BE5&src=c_fd767ceddab647fa3725dd4372b936fb925e8731cc47f5eea209a7281aca72fc%40group.calendar.google.com&color=%234285F4&src=c_bcd5fa794857bf4e3d34112dc68a97693e6d8bb12e46578d239ff649633fce76%40group.calendar.google.com&color=%23D81B60">
         </iframe>
       </div>
     </div>
 
-    <div class="section">
+    <div class="section" id="whatsapp">
       <h2>Join the WhatsApp Community</h2>
       <p>Get updates, chat access, and stay in the loop with reminders and announcements:</p>
-      <a class="button" href="https://chat.whatsapp.com/HGD2IMqaUei7Ix6wxFovXR?mode=ems_copy_c">Join WhatsApp Group</a>
+      <a class="button" href="https://chat.whatsapp.com/HGD2IMqaUei7Ix6wxFovXR?mode=ems_copy_c" target="_blank" rel="noopener noreferrer">Join WhatsApp Group</a>
     </div>
   </main>
+
+  <script src="wave.js" defer></script>
 </body>
 </html>
