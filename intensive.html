@@ -1,0 +1,791 @@
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Recalibration Day - 6 Hour Body Reset Intensive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="One day. Six hours. A complete body and nervous system reset for people tired of temporary fixes.">
+  <style>
+    :root {
+      --bg: #050608;
+      --bg-alt: #0c0e12;
+      --bg-soft: #11141a;
+      --card: #12151c;
+      --border: #272b33;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --accent: #7c3aed;
+      --accent-soft: #a855f7;
+      --danger: #f97373;
+      --max-width: 1080px;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 20px 16px 80px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0 10px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .nav-cta span {
+      color: var(--muted);
+    }
+
+    .btn,
+    button.btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+      color: #f9fafb;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 10px 30px rgba(124, 58, 237, 0.45);
+      transition: background 0.15s ease, transform 0.15s ease,
+        box-shadow 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #6d28d9, #9d4edd);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 40px rgba(124, 58, 237, 0.65);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--border);
+      box-shadow: none;
+      color: var(--text);
+      padding: 11px 18px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(148, 163, 184, 0.08);
+      transform: none;
+      box-shadow: none;
+    }
+
+    .section {
+      padding: 40px 0;
+    }
+
+    .section.alt {
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), #020617);
+      margin: 40px -16px 0;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-heading h2 {
+      font-size: 26px;
+      margin: 0 0 6px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+      padding: 40px 0 10px;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw + 14px, 40px);
+      line-height: 1.12;
+      margin: 0 0 10px;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: var(--muted);
+      margin: 6px 0 18px;
+      max-width: 560px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .hero-note {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-media {
+      background: radial-gradient(circle at top, rgba(129, 140, 248, 0.25), transparent 55%);
+      border-radius: 24px;
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      padding: 18px;
+    }
+
+    .hero-media-inner {
+      border-radius: 18px;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      padding: 4px 10px;
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    p {
+      margin: 8px 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .pas-box {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 24px 18px 26px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .pas-title {
+      font-size: 18px;
+      margin: 0 0 10px;
+      color: var(--text);
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 14px;
+    }
+
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .check {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(52, 211, 153, 0.2);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #6ee7b7;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .divider {
+      height: 1px;
+      margin: 40px 0;
+      background: linear-gradient(to right, transparent, #1f2933, transparent);
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    @media (max-width: 860px) {
+      .grid-two {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 20px 18px 22px;
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .value-item {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 18px 14px 18px;
+      font-size: 14px;
+    }
+
+    .value-item h4 {
+      font-size: 15px;
+      margin: 0 0 4px;
+    }
+
+    .value-item p {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .stat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .social-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .quote {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 18px 16px 18px;
+      font-size: 14px;
+    }
+
+    .quote p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .quote small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .faq {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+    }
+
+    .faq-q {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .faq-a {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .guarantee {
+      background: radial-gradient(circle at top, rgba(34, 197, 94, 0.18), transparent 55%);
+      border-radius: var(--radius);
+      border: 1px solid rgba(22, 163, 74, 0.65);
+      padding: 20px 18px 22px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #111827;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .cta-bar {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .spacer-sm {
+      height: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="logo">Recalibration Day</div>
+      <div class="nav-cta">
+        <span>Questions?</span>
+        <span>you@example.com</span>
+        <a href="#cta-main" class="btn-secondary">Free clarity call</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="section" id="top">
+      <div class="hero">
+        <div>
+          <div class="pill">
+            <span class="pill-dot"></span>
+            Six hour one to one intensive
+          </div>
+          <div class="eyebrow">High touch body reset for people who want real change</div>
+          <h1>Get a body that feels new with measurable relief in 6 hours using a full body recalibration method proven to work.</h1>
+          <p class="hero-sub">
+            Tired of tightness that keeps coming back? The only structural and somatic recalibration that resets your patterns at the source to guarantee smoother movement, deeper relief, and better control in a single 6 hour session.
+          </p>
+          <div class="hero-actions" id="cta-main">
+            <a href="https://calendly.com/YOUR-LINK/exploration-call" target="_blank" rel="noopener" class="btn">
+              Book your free clarity call
+            </a>
+            <a href="#how-it-works" class="btn-secondary">See how it works</a>
+          </div>
+          <p class="hero-note">
+            No pressure, no obligation. A short call to see if this immersion is the right fit for your body.
+          </p>
+        </div>
+        <div class="hero-media">
+          <div class="hero-media-inner">
+            <strong>Session glimpse</strong>
+            <p>
+              Place a calm photo or short video here that shows slow, focused hands-on work or guided movement in a quiet room.
+            </p>
+            <p>
+              The visual should say: safe, precise, grounded, fully present with one client at a time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM - AGITATE - SOLVE -->
+    <section class="section alt">
+      <div class="section-heading">
+        <h2>Addressing the real problem, not just the symptoms</h2>
+        <p>Here is why everything you have tried so far has not created lasting change.</p>
+      </div>
+
+      <div class="pas-box">
+        <h3 class="pas-title">Dear high performers, creators, and active people who feel stuck in their bodies,</h3>
+
+        <ul class="check-list">
+          <li><span class="check">✓</span><span>Do you keep feeling the same tightness return no matter what you try?</span></li>
+          <li><span class="check">✓</span><span>Are you frustrated that massage, stretching, or PT only help for a day or two?</span></li>
+          <li><span class="check">✓</span><span>Have you noticed your movement getting stiffer or more guarded even though you stay active?</span></li>
+        </ul>
+
+        <p>You are not imagining it. Your body is giving you real signals and nothing has addressed the root cause.</p>
+        <p>You have done everything you were told to do. Foam rolling, deep tissue sessions, mobility drills, strength programs, breathwork. And your body still feels tense, tired, or disconnected.</p>
+
+        <p>You try to stay positive. But it wears on you.</p>
+
+        <p><strong>The truth is simple.</strong></p>
+        <p>Your body is stuck in a pattern. Patterns do not change from surface work.</p>
+        <p>You feel this every day. Your shoulders lift without you noticing. Your breath is shallow. Your hips lock up. You wake up feeling like you already worked a full day.</p>
+
+        <p>You start to wonder if this is just your new normal. You start avoiding certain movements. You start losing confidence in how your body will respond.</p>
+
+        <p>You try another session, another practitioner, another method. But the relief never lasts.</p>
+
+        <p><strong>You know exactly what this cycle feels like:</strong></p>
+        <ul class="check-list">
+          <li><span class="check">✓</span><span>You loosen up then tighten right back up.</span></li>
+          <li><span class="check">✓</span><span>You feel good for a day then the tension returns.</span></li>
+          <li><span class="check">✓</span><span>You spend time and money fixing symptoms instead of patterns.</span></li>
+          <li><span class="check">✓</span><span>You push through pain because you do not know what else to do.</span></li>
+          <li><span class="check">✓</span><span>You worry the stiffness is slowly becoming permanent.</span></li>
+          <li><span class="check">✓</span><span>You feel yourself disconnecting from your physical power.</span></li>
+        </ul>
+
+        <p>Training suffers. Creativity dips. Confidence fades. Energy drops. Your sense of possibility shrinks.</p>
+
+        <p><strong>Here is the hopeful part.</strong></p>
+        <p>You do not need more scattered sessions, more tools, or more effort. You need a full body and nervous system recalibration that targets the real pattern.</p>
+        <p>That is exactly why I built the Recalibration Day. A 6 hour one to one immersion that uses deep structural bodywork, guided movement, and nervous system reset to change how your body organizes itself.</p>
+
+        <p>Clients feel a noticeable change before the session even ends. They walk out lighter, more fluid, more grounded. They breathe deeper. They stand differently. They feel like themselves again.</p>
+
+        <div class="cta-bar">
+          <a href="https://calendly.com/YOUR-LINK/exploration-call" target="_blank" rel="noopener" class="btn">
+            Book your free clarity call
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- VALUE PROP 1 WITH IMAGE -->
+    <section class="section">
+      <div class="grid-two">
+        <div class="card">
+          <div class="badge">
+            <span class="pill-dot"></span>
+            Dream outcome summary
+          </div>
+          <h3>Experience a complete 6 hour reset that restores ease, mobility, and confidence in your body by tonight.</h3>
+          <p>
+            Most sessions nibble at the edges of your problem. This immersion gives your body enough continuous time, attention, and structure to actually change.
+          </p>
+          <p>
+            Six focused hours allow your system to drop out of survival mode, release old holding patterns, and learn a new baseline.
+          </p>
+          <a href="#cta-main" class="btn" style="margin-top:14px;">Book your free clarity call</a>
+        </div>
+        <div class="hero-media">
+          <div class="hero-media-inner">
+            <strong>Image or video here</strong>
+            <p>Use a shot that shows before and after posture, walking, or simple movement that clearly looks different.</p>
+            <p>Add a short caption describing what changed during one Recalibration Day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL PROOF SECTION 1 -->
+    <section class="section alt">
+      <div class="section-heading">
+        <h2>Real people, real shifts</h2>
+        <p>Use stats, testimonials, or case studies to show proof that this works.</p>
+      </div>
+      <div class="social-proof-grid">
+        <div class="quote">
+          <p>"I walked out feeling like someone turned the lights back on inside my body. The tension I carried for years was finally quiet."</p>
+          <small>- Client name, city</small>
+        </div>
+        <div class="quote">
+          <p>"It felt like my body remembered itself. A week later I still move and stand differently without having to think about it."</p>
+          <small>- Client name, city</small>
+        </div>
+        <div class="quote">
+          <p>"I had tried everything. This was the first time I felt like the pattern actually changed instead of just loosening muscles."</p>
+          <small>- Client name, city</small>
+        </div>
+      </div>
+      <div class="cta-bar">
+        <a href="https://calendly.com/YOUR-LINK/exploration-call" target="_blank" rel="noopener" class="btn">
+          Get insight on your body patterns
+        </a>
+      </div>
+    </section>
+
+    <!-- VALUE PROP GRID -->
+    <section class="section">
+      <div class="section-heading">
+        <h2>How we do it and what makes this different</h2>
+        <p>Each element is built to increase effectiveness, reduce time to result, and make change stick.</p>
+      </div>
+
+      <div class="value-grid">
+        <div class="value-item">
+          <h4>Full day immersion</h4>
+          <p>Six continuous hours so your body has enough time and safety to reorganize at the pattern level.</p>
+        </div>
+        <div class="value-item">
+          <h4>Structural plus somatic method</h4>
+          <p>Hands-on work plus nervous system awareness to shift both tissue and perception for deeper change.</p>
+        </div>
+        <div class="value-item">
+          <h4>Movement repatterning</h4>
+          <p>Guided movement built into the session so your new pattern shows up when you walk out the door.</p>
+        </div>
+        <div class="value-item">
+          <h4>One day results</h4>
+          <p>A complete reset designed to give you noticeable relief and a new baseline in a single visit.</p>
+        </div>
+        <div class="value-item">
+          <h4>Built for high performers</h4>
+          <p>Designed for active, driven people who need their body to support training, work, and creative output.</p>
+        </div>
+        <div class="value-item">
+          <h4>One client per day</h4>
+          <p>No stacked schedule, no rushing. You get my full attention for the entire arc of the experience.</p>
+        </div>
+      </div>
+
+      <div class="cta-bar">
+        <a href="#cta-main" class="btn">See if this fits your situation</a>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section alt" id="how-it-works">
+      <div class="section-heading">
+        <h2>How it works</h2>
+        <p>Clear steps that make the likelihood of success high and the process simple.</p>
+      </div>
+
+      <div class="how-grid">
+        <div class="card">
+          <h3>1. Free clarity call</h3>
+          <p>You share what you have tried, what is hurting, and what you want instead. I explain how the immersion works and we decide together if it fits.</p>
+        </div>
+        <div class="card">
+          <h3>2. Six hour immersion</h3>
+          <p>We move through descent, reorganization, and emergence. Hands-on work, movement, and nervous system reset organized around the patterns your body is actually using.</p>
+        </div>
+        <div class="card">
+          <h3>3. Integration and follow up</h3>
+          <p>You leave with a simple daily anchor and clear guidelines. After one week we connect to check progress and fine tune what you are noticing.</p>
+        </div>
+      </div>
+
+      <div class="cta-bar">
+        <a href="https://calendly.com/YOUR-LINK/exploration-call" target="_blank" rel="noopener" class="btn">
+          Book your free clarity call
+        </a>
+      </div>
+    </section>
+
+    <!-- MEET THE PRACTITIONER -->
+    <section class="section">
+      <div class="section-heading">
+        <h2>Who you will be working with</h2>
+        <p>Trust comes from knowing who is guiding you and how they think.</p>
+      </div>
+
+      <div class="grid-two">
+        <div class="card">
+          <h3>About your practitioner</h3>
+          <p>I am a movement teacher and bodyworker who has spent years blending structural bodywork, somatic practices, and intelligent physical training.</p>
+          <p>My work focuses on helping people build a body that supports the life they actually want to live, not just a body that can get through the day.</p>
+          <p>In this immersion my job is simple: understand your patterns, create the right inputs, and guide your system into a new way of organizing itself.</p>
+        </div>
+        <div class="hero-media">
+          <div class="hero-media-inner">
+            <strong>Practitioner image</strong>
+            <p>Place a clear, grounded photo of you here. Calm expression, relaxed posture, simple background.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-bar">
+        <a href="#cta-main" class="btn">Talk with me about your situation</a>
+      </div>
+    </section>
+
+    <!-- GUARANTEE -->
+    <section class="section alt">
+      <div class="section-heading">
+        <h2>Risk free guarantee</h2>
+        <p>If this does not feel like one of the most effective sessions you have had, you do not pay.</p>
+      </div>
+
+      <div class="guarantee">
+        <h3>Feel a real shift within 90 minutes or you owe nothing.</h3>
+        <p>If you do not feel a noticeable change in your body within the first 90 minutes of the immersion, we stop and you pay nothing.</p>
+        <p>This protects you from wasting time and money. It also keeps me accountable to deliver real value, not vague relaxation.</p>
+        <div class="cta-bar">
+          <a href="https://calendly.com/YOUR-LINK/exploration-call" target="_blank" rel="noopener" class="btn">
+            Book your risk free clarity call
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="section-heading">
+        <h2>Frequently asked questions</h2>
+        <p>Direct answers to the most common questions clients ask before booking.</p>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item">
+          <div class="faq-q">How long is the session?</div>
+          <div class="faq-a">The immersion is six hours total with short breaks built in. Plan to have the rest of the day open.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What if I am not sure this is right for my issue?</div>
+          <div class="faq-a">That is exactly what the free clarity call is for. We will look at your history and decide together whether this is a good match.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is this massage, physical therapy, or coaching?</div>
+          <div class="faq-a">It blends structural bodywork, movement, and somatic work into one arc. It is not a replacement for medical care and does not diagnose conditions.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How should I prepare for the day?</div>
+          <div class="faq-a">Sleep well, hydrate, eat light, and avoid heavy training that morning. Wear comfortable clothing you can move in.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What results can I realistically expect?</div>
+          <div class="faq-a">Most people feel lighter, looser, and more grounded the same day. Many notice ongoing changes in the days that follow as the new pattern settles.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What happens after the immersion?</div>
+          <div class="faq-a">You leave with a simple daily anchor and guidelines plus a follow up call after one week to check progress and adjust as needed.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL RECAP / URGENCY -->
+    <section class="section alt">
+      <div class="grid-two">
+        <div>
+          <div class="badge">
+            <span class="pill-dot"></span>
+            Final recap
+          </div>
+          <h3>Why now is the moment to reset your body.</h3>
+          <p>Every month you stay stuck in the same pattern, your body learns that pattern more deeply.</p>
+          <p>This immersion gives you a clean break and a clear path forward.</p>
+          <ul class="check-list">
+            <li><span class="check">✓</span><span>Noticeable relief and smoother movement in a single day.</span></li>
+            <li><span class="check">✓</span><span>A method built for people who have already tried everything else.</span></li>
+            <li><span class="check">✓</span><span>Risk free guarantee so you do not pay if it does not deliver.</span></li>
+          </ul>
+          <a href="https://calendly.com/YOUR-LINK/exploration-call" target="_blank" rel="noopener" class="btn">
+            Reserve your free clarity call
+          </a>
+          <p class="hero-note" style="margin-top:10px;">
+            I only take a small number of Recalibration Day clients each month so the calendar can fill quickly.
+          </p>
+        </div>
+        <div class="hero-media">
+          <div class="hero-media-inner">
+            <strong>Support image or video</strong>
+            <p>Show a relaxed, confident client standing or moving after the session. This reinforces the final promise of how they will feel.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>© <span id="year"></span> Recalibration Day. All rights reserved.</div>
+      <div class="spacer-sm"></div>
+      <div>Not a substitute for medical care. If you are under treatment, consult your provider before making changes.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
