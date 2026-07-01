@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Misha Bodywork & Movement — Golden, Colorado</title>
+<meta name="description" content="Therapeutic bodywork in Golden, Colorado for chronic pain, tension, injuries, and recurring movement patterns. Hands-on body education at the intersection of massage, manual therapy, and movement practice." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f5efe6;
+    --paper-soft: #fbf7f0;
+    --ink: #27211b;
+    --muted: #766d63;
+    --line: #ded2c4;
+    --clay: #9b6248;
+    --sage-soft: #edf0e9;
+    --white: #fffaf3;
+    --clay-dim: rgba(155,98,72,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Libre Baskerville', Georgia, serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem clamp(1rem, 4vw, 3rem);
+    background: rgba(251,247,240,0.93);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(222,210,196,0.75);
+  }
+
+  .nav-mark {
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.68rem;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .nav-links a {
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.6rem;
+    color: var(--muted);
+  }
+
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links .book { color: var(--clay); }
+
+  /* LAYOUT */
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 clamp(1.1rem, 4vw, 2rem); }
+  .section-line { border-top: 1px solid var(--line); }
+
+  /* TYPE */
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.6rem;
+    color: var(--clay);
+    margin-bottom: 0.85rem;
+    display: block;
+  }
+
+  h1 {
+    font-size: clamp(2.1rem, 5vw, 3.6rem);
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 400;
+    margin-bottom: 0.85rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    color: var(--muted);
+    font-size: 0.94rem;
+    line-height: 1.72;
+    margin-bottom: 0.9rem;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  .lead {
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    color: #5f564c;
+    line-height: 1.68;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 0.72rem 1.1rem;
+    border-radius: 999px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn:hover { transform: translateY(-1px); }
+  .btn-primary { background: var(--ink); color: var(--white); border: 1px solid var(--ink); }
+  .btn-primary:hover { background: #3d3228; }
+  .btn-secondary { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn-secondary:hover { border-color: var(--clay); }
+  .btn-clay { background: var(--clay); color: var(--white); border: 1px solid var(--clay); }
+  .btn-clay:hover { background: #864f38; }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.4rem; }
+
+  /* HERO */
+  .hero { padding: clamp(4rem, 9vw, 6.5rem) 0 clamp(3rem, 6vw, 5rem); }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 760px);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    background: var(--line);
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .photo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1rem;
+    height: 100%;
+    background: rgba(222,210,196,0.3);
+  }
+
+  .photo-placeholder svg {
+    width: 40px;
+    height: 40px;
+    opacity: 0.4;
+  }
+
+  /* SPLIT LAYOUT */
+  .split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: start;
+  }
+
+  section { padding: clamp(2.5rem, 5vw, 4.5rem) 0; }
+
+  .section-note {
+    color: var(--muted);
+    font-size: 0.93rem;
+    max-width: 620px;
+    margin-bottom: 1.5rem;
+  }
+
+  /* WHAT TO EXPECT */
+  .expect-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .expect-card {
+    border-top: 1px solid var(--line);
+    padding: 1.05rem 0 0;
+  }
+
+  .expect-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 0.65rem;
+  }
+
+  /* WHAT I DO */
+  .modalities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .modality {
+    padding: 0.95rem 0 0;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  .modality strong {
+    display: block;
+    color: var(--ink);
+    font-size: 0.88rem;
+    margin-bottom: 0.2rem;
+  }
+
+  /* OUTCOMES */
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.9rem;
+    margin-top: 1.25rem;
+  }
+
+  .outcome-card {
+    border-top: 1px solid var(--line);
+    padding: 1rem 0 0;
+  }
+
+  .outcome-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 0.55rem;
+  }
+
+  /* TESTIMONIALS */
+  .testimonial-carousel {
+    max-width: 760px;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: clamp(1.35rem, 3vw, 2rem) 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .testimonial-viewport {
+    overflow: hidden;
+    min-height: 240px;
+  }
+
+  .testimonial-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    transform: translateX(0);
+    opacity: 1;
+    transition: transform 0.42s ease, opacity 0.42s ease;
+  }
+
+  .testimonial-slide.is-exiting-left {
+    transform: translateX(-8%);
+    opacity: 0;
+  }
+
+  .testimonial-slide.is-exiting-right {
+    transform: translateX(8%);
+    opacity: 0;
+  }
+
+  .testimonial-slide.is-entering-right {
+    transform: translateX(8%);
+    opacity: 0;
+  }
+
+  .testimonial-slide.is-entering-left {
+    transform: translateX(-8%);
+    opacity: 0;
+  }
+
+  .testimonial-stars {
+    color: var(--clay);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    line-height: 1;
+  }
+
+  .testimonial-text {
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.18rem);
+    color: #5f564c;
+    line-height: 1.68;
+  }
+
+  .testimonial-text::before { content: '“'; }
+  .testimonial-text::after { content: '”'; }
+
+  .testimonial-author {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--clay);
+  }
+
+  .testimonial-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+  }
+
+  .testimonial-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .testimonial-more,
+  .testimonial-count {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .arrow-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: rgba(255,250,243,0.65);
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    padding: 0;
+  }
+
+  .arrow-btn:hover {
+    transform: translateY(-1px);
+    border-color: var(--clay);
+    background: rgba(255,250,243,0.92);
+  }
+
+  .arrow-btn svg {
+    width: 16px;
+    height: 16px;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    fill: none;
+  }
+
+  /* SESSIONS */
+  .sessions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .session-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 1.35rem;
+  }
+
+  .session-card.recommended {
+    border-color: rgba(155,98,72,0.45);
+    background: linear-gradient(160deg, #fffaf3, #f7ece2);
+  }
+
+  .session-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 0.5rem;
+  }
+
+  .price {
+    font-size: 1.65rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin: 0.4rem 0 0.25rem;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+  }
+
+  .price-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.52rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--clay);
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  /* SECTION CTA BOX */
+  .section-cta {
+    margin-top: 1.5rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(255,250,243,0.65);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-cta p {
+    margin: 0;
+    max-width: 500px;
+    font-size: 0.9rem;
+  }
+
+  /* FAQ */
+  .faq { display: grid; gap: 0.65rem; }
+
+  details {
+    background: rgba(255,250,243,0.7);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 1rem 1.1rem;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 0.94rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  summary::after {
+    content: '+';
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    color: var(--clay);
+    font-weight: 300;
+    flex-shrink: 0;
+  }
+
+  details[open] summary::after { content: '−'; }
+  details p { margin: 0.75rem 0 0; font-size: 0.9rem; }
+
+  /* DMS CROSSOVER */
+  .crossover {
+    background: var(--sage-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .crossover-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .crossover-photo {
+    aspect-ratio: 16/9;
+    background: rgba(222,210,196,0.5);
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* FINAL CTA */
+  .final-cta {
+    background: var(--ink);
+    color: var(--white);
+  }
+
+  .final-cta h2 { color: var(--white); }
+  .final-cta p { color: rgba(230,225,216,0.72); }
+  .final-cta .eyebrow { color: rgba(155,98,72,0.9); }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem clamp(1rem, 4vw, 3rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .footer-note {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.56rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  /* REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.up { opacity: 1; transform: translateY(0); }
+
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal, .testimonial-slide, .btn { transition: none; }
+  }
+
+  /* MOBILE */
+  @media (max-width: 800px) {
+    nav { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
+    .nav-links { width: 100%; justify-content: space-between; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-photo { aspect-ratio: 3/2; order: -1; }
+    .split { grid-template-columns: 1fr; }
+    .expect-grid { grid-template-columns: 1fr; }
+    .modalities { grid-template-columns: 1fr; }
+    .outcomes-grid { grid-template-columns: 1fr; }
+    .sessions { grid-template-columns: 1fr; }
+    .crossover-inner { grid-template-columns: 1fr; }
+    .crossover-photo { order: -1; }
+    footer { flex-direction: column; gap: 1rem; }
+    .footer-links { flex-direction: column; gap: 0.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    .outcomes-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Primary navigation">
+  <a href="/" class="nav-mark">Misha Bodywork & Movement</a>
+  <ul class="nav-links">
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#expect">What to Expect</a></li>
+    <li><a href="#sessions">Sessions</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a class="book" href="https://movementandbodywork.as.me/bodywork" target="_blank" rel="noopener">Book →</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Therapeutic Bodywork · Downtown Golden, Colorado</span>
+        <h1>Hands-on body education for pain, tension, and recurring patterns.</h1>
+        <p class="lead">My practice revolves around injuries, chronic pain, and discomfort caused by underused or overused tissues. Each session is focused on restoring motion, vitality, and ease.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://movementandbodywork.as.me/bodywork" target="_blank" rel="noopener">Book a Session</a>
+        </div>
+        
+      </div>
+    </div>
+  </header>
+
+  <!-- APPROACH -->
+  <section id="approach" class="section-line">
+    <div class="wrap split reveal">
+      <div>
+        <span class="eyebrow">Approach</span>
+        <h2>Bodywork as hands-on education.</h2>
+      </div>
+      <div>
+        <p>This work weaves together the principles of physical therapy, massage, and movement practice. It is hands-on body education: manual therapy that helps you relax, sense yourself more clearly, and create small changes that compound over time.</p>
+        <p>Most pain and tension is a pattern — not just a symptom. The same holding, the same compensation, the same area flaring up. The goal is not only to relax you and send you home. It is to help you understand what your body is doing and give it a new option.</p>
+        <p>It is a collaborative process. The more we can understand what you are working with, the more useful our time together becomes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT I DO -->
+  <section class="section-line">
+    <div class="wrap reveal">
+      <span class="eyebrow">The Work</span>
+      <h2>A session draws from whatever the body needs.</h2>
+      <p class="section-note">No session looks exactly the same. The approach is chosen based on what's happening and what's most useful — not a fixed protocol.</p>
+      <div class="modalities">
+        <div class="modality">
+          <strong>Deep Tissue & Myofascial Release</strong>
+          Pressure and glides that shear stuck layers of fascia. Long holds that open the tissue at depth.
+        </div>
+        <div class="modality">
+          <strong>Sustained Pressure & Contact</strong>
+          Holds, glides, traction, and carefully applied pressure to help areas that feel stuck, dense, or under-responsive.
+        </div>
+        <div class="modality">
+          <strong>Nervous System & Breath</strong>
+          Breathing cues and attentive contact that support a more settled, open, and relaxed state.
+        </div>
+        <div class="modality">
+          <strong>Movement & Awareness</strong>
+          Guided attention to how you hold, brace, and compensate. Small movements that give the body new information.
+        </div>
+        <div class="modality">
+          <strong>Table & Mat Work</strong>
+          Sessions can happen on a massage table or a mat on the floor, depending on what serves the work best.
+        </div>
+        <div class="modality">
+          <strong>Injury History & Restricted Movement</strong>
+          Careful work with people navigating old injuries, surgery history, scarring, or restricted movement when bodywork is appropriate.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section id="expect" class="section-line">
+    <div class="wrap reveal">
+      <span class="eyebrow">What to Expect</span>
+      <h2>A session is a conversation, not a protocol.</h2>
+      <div class="expect-grid">
+        <div class="expect-card">
+          <div class="expect-num">When you arrive</div>
+          <h3>We start by talking.</h3>
+          <p>We'll discuss the kind of work best suited for you — on the table or the mat — and what you're wanting to address. I'll listen and offer suggestions, and we'll collaboratively craft an approach to start with.</p>
+        </div>
+        <div class="expect-card">
+          <div class="expect-num">During the session</div>
+          <h3>We unfold it together.</h3>
+          <p>A session might be long holds in deep fascial stretches, sustained pressure and glides, traction, breath cues, or guided awareness that brings about a more relaxed, whole state. It follows the body's signals, not a script.</p>
+        </div>
+        <div class="expect-card">
+          <div class="expect-num">When you leave</div>
+          <h3>Relief, relaxation, and new information.</h3>
+          <p>Most people leave with a sense of ease they didn't walk in with — and some new understanding of what their body was holding. That clarity is part of what makes the work last.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section class="section-line">
+    <div class="wrap reveal">
+      <span class="eyebrow">What shifts</span>
+      <h2>We can tell it's working when daily life has more ease and more options.</h2>
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <div class="outcome-num">01</div>
+          <h3>Less pain and tension</h3>
+          <p>Chronic pain, tension, and discomfort decrease, or move into new patterns that can be addressed further.</p>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">02</div>
+          <h3>More freedom to move</h3>
+          <p>Moving without fear of pain — or without pain itself — becomes more available. Activities that were limited open back up.</p>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-num">03</div>
+          <h3>More ease in daily life</h3>
+          <p>End-of-day tension reduces. Sleep improves. Stress has somewhere to go. The body stops being something you're managing and becomes something you inhabit.</p>
+        </div>
+      </div>
+      <div class="section-cta">
+        <p>If this is the kind of shift you're looking for, start with a 75-minute session.</p>
+        <div class="actions" style="margin-top:0;">
+          <a class="btn btn-primary" href="https://movementandbodywork.as.me/bodywork" target="_blank" rel="noopener">Book 75 Minutes</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section-line">
+    <div class="wrap reveal">
+      <span class="eyebrow">What people say</span>
+      <h2>Client words from Google reviews.</h2>
+      <div class="testimonial-carousel" aria-live="polite">
+        <div class="testimonial-viewport">
+          <div class="testimonial-slide" id="testimonial-slide">
+            <div class="testimonial-stars" id="testimonial-stars">★★★★★</div>
+            <div class="testimonial-text" id="testimonial-text">Best massage therapist in Golden! I have been a loyal client for 5 years now. Misha is great at listening to what you need and also finding the spots you did not even realize needed bodywork. He incorporates stretching and breath work into the massage. The space is nice and he is very professional. Highly recommend!</div>
+            <div class="testimonial-author" id="testimonial-author">Lisa Carropen · Google Review</div>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <div class="testimonial-nav">
+            <span class="testimonial-more">Read more</span>
+            <button class="arrow-btn" type="button" id="testimonial-prev" aria-label="Previous review">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5" /></svg>
+            </button>
+            <button class="arrow-btn" type="button" id="testimonial-next" aria-label="Next review">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5" /></svg>
+            </button>
+          </div>
+          <span class="testimonial-count" id="testimonial-count">1 / 7</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESSIONS & PRICING -->
+  <section id="sessions" class="section-line">
+    <div class="wrap reveal">
+      <span class="eyebrow">Sessions</span>
+      <h2>Schedule an appointment.</h2>
+      <p class="section-note">If you are new, 75 minutes is usually the best place to start — enough time to understand what's happening and begin making a shift.</p>
+      <div class="sessions">
+        <article class="session-card">
+          <div class="session-label">60 Minutes</div>
+          <div class="price">$125</div>
+          <p>Focused work for one primary area or a general reset when you know what needs attention.</p>
+          <div class="actions" style="margin-top:1rem;">
+            <a class="btn btn-secondary" href="https://movementandbodywork.as.me/bodywork" target="_blank" rel="noopener">Book 60</a>
+          </div>
+        </article>
+        <article class="session-card recommended">
+          <div class="session-label">75 Minutes</div>
+          <div class="price">$145</div>
+          <span class="price-note">Recommended first session</span>
+          <p>More time to work with the pattern, sense what's happening, and begin integrating the change.</p>
+          <div class="actions" style="margin-top:1rem;">
+            <a class="btn btn-primary" href="https://movementandbodywork.as.me/bodywork" target="_blank" rel="noopener">Book 75</a>
+          </div>
+        </article>
+        <article class="session-card">
+          <div class="session-label">90 Minutes</div>
+          <div class="price">$165</div>
+          <p>For deeper work, complex tension patterns, or a fuller body session with time to go slow.</p>
+          <div class="actions" style="margin-top:1rem;">
+            <a class="btn btn-secondary" href="https://movementandbodywork.as.me/bodywork" target="_blank" rel="noopener">Book 90</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section-line">
+    <div class="wrap split reveal">
+      <div>
+        <span class="eyebrow">Experience</span>
+        <h2>Seven years working with many kinds of bodies.</h2>
+      </div>
+      <div>
+        <p>I have worked with people navigating injury histories, surgery history, athletic training, chronic neck and shoulder tension, desk work, age-related mobility concerns, stress, running, pilates, strength training, and movement practice.</p>
+        <p>This work is informed by thousands of hours of hands-on practice, study, and personal training in acrobatics, strength, mobility, endurance, and dance. I am also in my third year of a five-year international movement program. My own education is active, not finished.</p>
+        <p>I try to meet every person where they are — all ages, all backgrounds, all histories. Everyone who walks through the door is welcome.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DMS CROSSOVER -->
+  <section class="crossover">
+    <div class="wrap crossover-inner reveal">
+      <div>
+        <span class="eyebrow">Also at Denver Movement School</span>
+        <h2>Bodywork and movement practice pair well.</h2>
+        <p>Alongside bodywork, I teach weekly movement classes in Denver — strength, coordination, partner work, sprinting, dance, and physical challenge for adults who want more than a workout.</p>
+        <p>Many clients find that the two practices deepen each other: bodywork gives you better information about what your body holds, and movement practice gives that information somewhere to go.</p>
+        <div class="actions">
+          <a class="btn btn-clay" href="https://denvermovement.school" target="_blank" rel="noopener">Visit Denver Movement School →</a>
+        </div>
+      </div>
+      <div class="crossover-photo">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" xmlns="http://www.w3.org/2000/svg" width="36" height="36"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9l4-4 4 4 4-6 4 6"/></svg>
+          <span>Movement class photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section-line">
+    <div class="wrap split reveal">
+      <div>
+        <span class="eyebrow">FAQ</span>
+        <h2>A few common questions.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Is this massage?</summary>
+          <p>It includes massage and manual therapy, but it is not only massage. The work is oriented around hands-on body education — relaxation, awareness, and changing tension patterns. If you want a relaxation massage, this can be that. If you want deeper therapeutic work, it can be that too.</p>
+        </details>
+        <details>
+          <summary>Is this physical therapy?</summary>
+          <p>No. This is not medical diagnosis or a physical therapy plan. It is therapeutic bodywork informed by manual therapy, movement practice, and years of hands-on experience.</p>
+        </details>
+        <details>
+          <summary>What session length should I choose?</summary>
+          <p>For most new clients, 75 minutes is the best starting point. 60 minutes works well for focused work on one area you know well. 90 minutes is for deeper or more complex work, or a fuller body session.</p>
+        </details>
+        <details>
+          <summary>How often should I come?</summary>
+          <p>One session can create real relief and clarity. Repeated sessions help reinforce a shift and give the body more time to develop a new pattern. Many clients come monthly; some more frequently while working through something specific.</p>
+        </details>
+        <details>
+          <summary>Where are sessions held?</summary>
+          <p>In downtown Golden, Colorado. Exact location details are provided after booking.</p>
+        </details>
+        <details>
+          <summary>Do you work with injuries or surgery history?</summary>
+          <p>Yes, when bodywork is appropriate. I have worked with many people navigating restriction, old injuries, scarring, and surgery history. This is not medical rehab or diagnosis; please mention relevant history when you book so we can plan accordingly.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="wrap">
+      <span class="eyebrow">Start here</span>
+      <h2>Schedule an appointment.</h2>
+      <p style="max-width:560px;">The first small commitment is to schedule an appointment. We'll work with what's happening, use hands-on therapy to create more ease, and help you understand what your body may be asking for next.</p>
+      <div class="actions">
+        <a class="btn btn-clay" href="https://movementandbodywork.as.me/bodywork" target="_blank" rel="noopener">Book a Session →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-note">Misha Bodywork & Movement · Golden, Colorado</div>
+  <div class="footer-links">
+    <a class="footer-note" href="https://movementandbodywork.as.me/bodywork" target="_blank" rel="noopener">Book a Session</a>
+    <a class="footer-note" href="https://denvermovement.school" target="_blank" rel="noopener">Denver Movement School</a>
+    <a class="footer-note" href="https://instagram.com/misha.lantsov" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</footer>
+
+<script>
+  const testimonials = [
+    {
+      text: "Best massage therapist in Golden! I have been a loyal client for 5 years now. Misha is great at listening to what you need and also finding the spots you did not even realize needed bodywork. He incorporates stretching and breath work into the massage. The space is nice and he is very professional. Highly recommend!",
+      author: "Lisa Carropen · Google Review",
+      stars: "★★★★★"
+    },
+    {
+      text: "Misha is the best massage therapist I have encountered. I had a persistent knee issue after a ski fall with frequent pain flare ups. My pain dramatically decreased after our first session. He worked slowly and steadily, and he also taught me how to do my own myofascial work with massage balls so I could take care of my body.",
+      author: "Kathleen Shea · Google Review",
+      stars: "★★★★★"
+    },
+    {
+      text: "I had been dealing with chronic neck pain for years by the time I saw him and I can now say that the headaches, pain, and severity of what I was experiencing are completely reduced. I recommend him wholeheartedly to anyone looking for bodywork that is skilled, intuitive, and transformative.",
+      author: "Micaela Wilson · Google Review",
+      stars: "★★★★★"
+    },
+    {
+      text: "Misha is amazing! I see him for integrated massage and bodywork related to running, some chronic injuries, and stress. He is so wise about the body and is a truly gifted healer. For movement, Misha was also an incredible instructor. He was talented, patient, creative, and great about tailored advice for my goals. Highly recommend!",
+      author: "Lisa Reyes Mason · Google Review",
+      stars: "★★★★★"
+    },
+    {
+      text: "Misha has a strong understanding of the interconnectedness of the body and how this impacts movement and ultimately tension and pain in the body. Whether you are looking for a relaxing massage or a deeper, more therapeutic session, he takes the time to understand your needs and then delivers. Highly recommended!",
+      author: "Monika VanderStek · Google Review",
+      stars: "★★★★★"
+    },
+    {
+      text: "I came to Misha for back, hip and neck issues. After many years of exploring different therapies and therapists, I can confidently say he is hands down the best in town. My symptoms have improved significantly. I always leave feeling relaxed, loose and ready to take on the rest of the week.",
+      author: "Jonathan Quigg · Google Review",
+      stars: "★★★★★"
+    },
+    {
+      text: "Misha is incredible. He has been a game-changer for my muscle pain. Before I started seeing him, I was really limited in what I could do. Now I am able to enjoy the things I love again, thanks to his help.",
+      author: "Terri O'Connell · Google Review",
+      stars: "★★★★★"
+    }
+  ];
+
+  const testimonialSlide = document.getElementById('testimonial-slide');
+  const testimonialStars = document.getElementById('testimonial-stars');
+  const testimonialText = document.getElementById('testimonial-text');
+  const testimonialAuthor = document.getElementById('testimonial-author');
+  const testimonialPrev = document.getElementById('testimonial-prev');
+  const testimonialNext = document.getElementById('testimonial-next');
+  const testimonialCount = document.getElementById('testimonial-count');
+  let testimonialIndex = 0;
+  let testimonialAnimating = false;
+
+  function swapTestimonial(nextIndex, direction) {
+    if (!testimonialSlide || !testimonialText || !testimonialAuthor || testimonialAnimating) return;
+    testimonialAnimating = true;
+
+    const exitClass = direction === 'next' ? 'is-exiting-left' : 'is-exiting-right';
+    const enterClass = direction === 'next' ? 'is-entering-right' : 'is-entering-left';
+
+    testimonialSlide.classList.add(exitClass);
+
+    window.setTimeout(() => {
+      testimonialIndex = (nextIndex + testimonials.length) % testimonials.length;
+      testimonialStars.textContent = testimonials[testimonialIndex].stars;
+      testimonialText.textContent = testimonials[testimonialIndex].text;
+      testimonialAuthor.textContent = testimonials[testimonialIndex].author;
+      if (testimonialCount) testimonialCount.textContent = `${testimonialIndex + 1} / ${testimonials.length}`;
+
+      testimonialSlide.classList.remove(exitClass);
+      testimonialSlide.classList.add(enterClass);
+      void testimonialSlide.offsetWidth;
+      testimonialSlide.classList.remove(enterClass);
+
+      window.setTimeout(() => {
+        testimonialAnimating = false;
+      }, 430);
+    }, 420);
+  }
+
+  if (testimonialNext) {
+    testimonialNext.addEventListener('click', () => swapTestimonial(testimonialIndex + 1, 'next'));
+  }
+
+  if (testimonialPrev) {
+    testimonialPrev.addEventListener('click', () => swapTestimonial(testimonialIndex - 1, 'prev'));
+  }
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('up'), i * 60);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
