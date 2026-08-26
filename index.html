@@ -2,19 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Misha Lantsov | Bodywork in Golden & Movement Education in Denver</title>
-  <meta name="description" content="Misha Lantsov is a bodyworker and movement teacher in Colorado, offering therapeutic bodywork in Golden, Denver Movement School classes, and a one-month movement and bodywork intensive.">
-  <link rel="canonical" href="https://mishalantsov.com/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Misha Lantsov | Bodywork & Movement Education in Colorado</title>
+  <meta name="description" content="Misha Lantsov is a bodyworker, movement teacher, and educator in Colorado. Explore therapeutic bodywork in Golden or Denver Movement School in Denver.">
+  <link rel="canonical" href="https://mishalantsov.com/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mishalantsov.com/">
-  <meta property="og:title" content="Misha Lantsov | Bodywork in Golden & Movement Education in Denver">
-  <meta property="og:description" content="Therapeutic bodywork in Golden, adult movement education in Denver, and concentrated movement/bodywork intensives.">
+  <meta property="og:title" content="Misha Lantsov | Bodywork & Movement Education in Colorado">
+  <meta property="og:description" content="Therapeutic bodywork in Golden and adult movement education in Denver.">
   <meta property="og:image" content="https://mishalantsov.com/images/portrait1.jpeg">
   <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,31 +52,20 @@
           "postalCode": "80401",
           "addressCountry": "US"
         },
-        "areaServed": {"@type": "City", "name": "Golden"},
         "openingHoursSpecification": [
           {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Sunday", "opens": "08:30", "closes": "13:30"},
           {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Monday", "opens": "15:30", "closes": "20:00"},
           {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Tuesday", "opens": "13:30", "closes": "17:00"},
           {"@type": "OpeningHoursSpecification", "dayOfWeek": "https://schema.org/Thursday", "opens": "15:30", "closes": "20:00"}
-        ],
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Therapeutic Bodywork Sessions",
-          "itemListElement": [
-            {"@type": "Offer", "price": "125", "priceCurrency": "USD", "itemOffered": {"@type": "Service", "name": "60 Minute Therapeutic Bodywork"}},
-            {"@type": "Offer", "price": "145", "priceCurrency": "USD", "itemOffered": {"@type": "Service", "name": "75 Minute Therapeutic Bodywork"}},
-            {"@type": "Offer", "price": "165", "priceCurrency": "USD", "itemOffered": {"@type": "Service", "name": "90 Minute Therapeutic Bodywork"}}
-          ]
-        }
+        ]
       },
       {
         "@type": "EducationalOrganization",
         "@id": "https://mishalantsov.com/denver-movement-school#organization",
         "name": "Denver Movement School",
-        "description": "Adult movement education in Denver through classes and practice cycles focused on strength, coordination, athleticism, adaptability, and movement practice.",
+        "description": "Adult movement education in Denver through structured practice in strength, coordination, athleticism, adaptability, partner work, and movement learning.",
         "url": "https://mishalantsov.com/denver-movement-school",
         "founder": {"@id": "https://mishalantsov.com/#misha-lantsov"},
-        "areaServed": {"@type": "City", "name": "Denver"},
         "location": {
           "@type": "Place",
           "name": "Wiggelruhm",
@@ -91,33 +77,6 @@
             "postalCode": "80209",
             "addressCountry": "US"
           }
-        }
-      },
-      {
-        "@type": "Event",
-        "@id": "https://mishalantsov.com/denver-movement-school#weekly-class",
-        "name": "Denver Movement School Weekly Movement Practice",
-        "url": "https://mishalantsov.com/denver-movement-school",
-        "organizer": {"@id": "https://mishalantsov.com/denver-movement-school#organization"},
-        "location": {
-          "@type": "Place",
-          "name": "Wiggelruhm",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "125 S Sherman St",
-            "addressLocality": "Denver",
-            "addressRegion": "CO",
-            "postalCode": "80209",
-            "addressCountry": "US"
-          }
-        },
-        "eventSchedule": {
-          "@type": "Schedule",
-          "repeatFrequency": "P1W",
-          "byDay": "https://schema.org/Tuesday",
-          "startTime": "17:30",
-          "endTime": "18:50",
-          "scheduleTimezone": "America/Denver"
         }
       },
       {
@@ -125,45 +84,197 @@
         "@id": "https://mishalantsov.com/intensive#service",
         "name": "One-Month Movement and Bodywork Intensive",
         "url": "https://mishalantsov.com/intensive",
-        "provider": {"@id": "https://mishalantsov.com/#misha-lantsov"},
-        "areaServed": [
-          {"@type": "City", "name": "Golden"},
-          {"@type": "City", "name": "Denver"}
-        ]
+        "provider": {"@id": "https://mishalantsov.com/#misha-lantsov"}
       }
     ]
   }
   </script>
+  <style>
+    :root {
+      --paper: #f4f1eb;
+      --ink: #171717;
+      --muted: #6b6861;
+      --line: rgba(23,23,23,.16);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, 'Times New Roman', serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .shell { width: min(1240px, calc(100% - 40px)); margin: 0 auto; }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 26px 0 22px;
+      border-bottom: 1px solid var(--line);
+    }
+    .name {
+      font-size: .76rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    nav { display: flex; gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
+    nav a {
+      color: var(--muted);
+      font: 500 .7rem/1 Arial, Helvetica, sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    nav a:hover { color: var(--ink); }
+    .intro {
+      max-width: 760px;
+      padding: clamp(50px, 8vw, 96px) 0 clamp(34px, 5vw, 58px);
+    }
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2.8rem, 7vw, 6.2rem);
+      line-height: .95;
+      font-weight: 400;
+      letter-spacing: -.045em;
+    }
+    .intro p {
+      max-width: 650px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+      line-height: 1.55;
+    }
+    .doors {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      padding-bottom: clamp(48px, 7vw, 90px);
+    }
+    .door {
+      min-height: min(68vh, 690px);
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      background: #222;
+      text-decoration: none;
+      isolation: isolate;
+    }
+    .door img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+      z-index: -2;
+    }
+    .door::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.68), rgba(0,0,0,.05) 65%);
+      z-index: -1;
+    }
+    .door:hover img { transform: scale(1.025); }
+    .door-copy {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(24px, 4vw, 44px);
+      color: #fff;
+    }
+    .kicker {
+      margin-bottom: 8px;
+      font: 500 .68rem/1.2 Arial, Helvetica, sans-serif;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      opacity: .78;
+    }
+    .door h2 {
+      margin: 0 0 9px;
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: -.035em;
+    }
+    .door p { margin: 0; max-width: 520px; line-height: 1.5; opacity: .88; }
+    .arrow { margin-top: 18px; font: 600 .72rem/1 Arial, Helvetica, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px 0 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font: .72rem/1.5 Arial, Helvetica, sans-serif;
+    }
+    .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 760px) {
+      .shell { width: min(100% - 24px, 1240px); }
+      .top { align-items: flex-start; }
+      nav { gap: 12px; }
+      .doors { grid-template-columns: 1fr; }
+      .door { min-height: 62vh; }
+      footer { flex-direction: column; }
+    }
+  </style>
 </head>
+<body>
+  <div class="shell">
+    <header class="top">
+      <a class="name" href="/">Misha Lantsov</a>
+      <nav aria-label="Primary navigation">
+        <a href="/about">About</a>
+        <a href="/writing">Writing</a>
+        <a href="/intensive">Intensive</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
 
-<script src="wave.js"></script>
+    <main>
+      <section class="intro">
+        <h1>Misha Lantsov</h1>
+        <p>Movement teacher, bodyworker, and educator in Colorado. My work centers on helping people develop a more capable, adaptable, and direct relationship with their bodies.</p>
+      </section>
 
-<body class="index-page">
+      <section class="doors" aria-label="Ways to work with Misha Lantsov">
+        <a class="door" href="/bodywork">
+          <img src="/images/partnerbodywork.jpeg" alt="Hands-on bodywork session with Misha Lantsov" loading="eager">
+          <div class="door-copy">
+            <div class="kicker">Golden, Colorado</div>
+            <h2>Bodywork</h2>
+            <p>Therapeutic bodywork for pain, tension, recurring patterns, and a clearer relationship with your body.</p>
+            <div class="arrow">Explore bodywork →</div>
+          </div>
+        </a>
 
-  <nav>
-    <a href="/">home</a>
-    <a href="/about">about</a>
-    <a href="/work">work</a>
-    <a href="/articles">articles</a>
-    <a href="/videos">videos</a>
-    <a href="/gallery">gallery</a>
-    <a href="/schedule">schedule</a>
-    <a href="/contact">contact</a>
-  </nav>
+        <a class="door" href="/denver-movement-school">
+          <img src="/images/sprint.png" alt="Denver Movement School movement practice in Colorado" loading="eager">
+          <div class="door-copy">
+            <div class="kicker">Denver, Colorado</div>
+            <h2>Denver Movement School</h2>
+            <p>Movement practice and physical education for adults: strength, coordination, athleticism, play, and learning.</p>
+            <div class="arrow">Explore the school →</div>
+          </div>
+        </a>
+      </section>
+    </main>
 
-  <h1>Misha Lantsov</h1>
-
-  <p>I’m a movement teacher, bodyworker, and educator in Colorado. I help people reconnect with their bodies through touch, movement practice, and creative attention.</p>
-
-  <p>I run <a href="/bodywork"><strong>Misha Bodywork and Movement</strong></a>, a therapeutic bodywork practice in downtown Golden, and <a href="/denver-movement-school"><strong>Denver Movement School</strong></a>, where I teach a weekly adult movement practice in Denver.</p>
-
-  <p>You can <a href="/bodywork">book bodywork in Golden</a>, <a href="/denver-movement-school">explore movement classes</a>, <a href="/intensive">inquire about a one-month intensive</a>, or <a href="/articles">read my writing</a>.</p>
-
-  <p>I also share <a href="/videos">video content</a> and <a href="/gallery">photos</a> from my creative and movement work.</p>
-
-  <footer>
-    <p>© 2026 Misha Lantsov</p>
-  </footer>
-
+    <footer>
+      <span>© 2026 Misha Lantsov</span>
+      <div class="footer-links">
+        <a href="/about">About</a>
+        <a href="/writing">Writing</a>
+        <a href="/intensive">Intensive</a>
+        <a href="https://instagram.com/misha.lantsov" target="_blank" rel="noopener">Instagram</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
