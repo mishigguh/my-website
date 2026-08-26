@@ -2,23 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Misha Lantsov | Movement Teacher & Bodyworker in Golden, Colorado</title>
-  <meta name="description" content="Misha Lantsov is a movement teacher, bodyworker, and educator in Golden, Colorado, helping people reconnect with their bodies through touch, movement practice, and creative attention.">
+  <title>Misha Lantsov | Bodywork in Golden & Movement Education in Denver</title>
+  <meta name="description" content="Misha Lantsov is a bodyworker and movement teacher in Colorado, offering therapeutic bodywork through Misha Bodywork and Movement in Golden and adult movement education through Denver Movement School.">
   <link rel="canonical" href="https://mishalantsov.com/">
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Misha Lantsov",
-    "url": "https://mishalantsov.com/",
-    "jobTitle": ["Movement Teacher", "Bodyworker", "Educator"],
-    "knowsAbout": ["Movement Education", "Bodywork", "Movement Practice"],
-    "homeLocation": {
-      "@type": "Place",
-      "name": "Golden, Colorado"
-    }
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://mishalantsov.com/#misha-lantsov",
+        "name": "Misha Lantsov",
+        "url": "https://mishalantsov.com/",
+        "jobTitle": ["Movement Teacher", "Bodyworker", "Educator"],
+        "knowsAbout": ["Movement Education", "Bodywork", "Movement Practice"],
+        "founder": {
+          "@id": "https://mishalantsov.com/denver-movement-school#organization"
+        },
+        "worksFor": {
+          "@id": "https://mishalantsov.com/bodywork#business"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://mishalantsov.com/bodywork#business",
+        "name": "Misha Bodywork and Movement",
+        "url": "https://mishalantsov.com/bodywork",
+        "founder": {
+          "@id": "https://mishalantsov.com/#misha-lantsov"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1300 Jackson St, Suite B200",
+          "addressLocality": "Golden",
+          "addressRegion": "CO",
+          "postalCode": "80401",
+          "addressCountry": "US"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://mishalantsov.com/denver-movement-school#organization",
+        "name": "Denver Movement School",
+        "url": "https://mishalantsov.com/denver-movement-school",
+        "founder": {
+          "@id": "https://mishalantsov.com/#misha-lantsov"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Denver"
+        }
+      }
+    ]
   }
   </script>
 </head>
@@ -26,39 +63,38 @@
 <script src="wave.js"></script>
 
 <body class="index-page">
-   
 
   <nav>
-    <a href="index.html">home</a>
-    <a href="about.html">about</a>
-    <a href="work.html">work</a>
-    <a href="articles.html">articles</a>
-    <a href="videos.html">videos</a>
-    <a href="gallery.html">gallery</a>
-    <a href="schedule.html">schedule</a>
-    <a href="contact.html">contact</a>
+    <a href="/">home</a>
+    <a href="/about">about</a>
+    <a href="/work">work</a>
+    <a href="/articles">articles</a>
+    <a href="/videos">videos</a>
+    <a href="/gallery">gallery</a>
+    <a href="/schedule">schedule</a>
+    <a href="/contact">contact</a>
   </nav>
 
   <h1>Misha Lantsov</h1>
 
   <p>
-    I’m a movement teacher, bodyworker, and educator. I help people reconnect with their bodies through touch, practice, and creative attention.
+    I’m a movement teacher, bodyworker, and educator in Colorado. I help people reconnect with their bodies through touch, movement practice, and creative attention.
   </p>
 
   <p>
-    You can <a href="about.html">see what I'm up to now</a>, <a href="work.html">explore working together</a>, or <a href="articles.html">read my writings</a>.
+    I run <a href="/bodywork"><strong>Misha Bodywork and Movement</strong></a>, a therapeutic bodywork practice at 1300 Jackson St, Suite B200 in downtown Golden, and <a href="/denver-movement-school"><strong>Denver Movement School</strong></a>, where I teach movement practice for adults in Denver.
   </p>
 
   <p>
-    I also share <a href="videos.html">video content</a> and <a href="gallery.html">photos</a> from my creative and movement work.
+    You can <a href="/about">learn more about me</a>, <a href="/bodywork">book bodywork in Golden</a>, <a href="/denver-movement-school">explore movement classes</a>, or <a href="/articles">read my writing</a>.
   </p>
 
   <p>
-    If you're ready to begin, you can <a href="schedule.html">schedule a session</a> or <a href="contact.html">reach out</a>.
+    I also share <a href="/videos">video content</a> and <a href="/gallery">photos</a> from my creative and movement work.
   </p>
 
   <footer>
-    <p>© 2025 Misha Lantsov</p>
+    <p>© 2026 Misha Lantsov</p>
   </footer>
 
 </body>
