@@ -37,11 +37,11 @@
           "https://instagram.com/misha.lantsov"
         ],
         "jobTitle": ["Movement Teacher", "Bodyworker", "Educator"],
-        "knowsAbout": ["Movement Education", "Bodywork", "Movement Practice"],
+        "knowsAbout": ["Movement Education", "Therapeutic Bodywork", "Movement Practice", "Physical Preparation", "Somatic Practice"],
         "worksFor": {
           "@id": "https://mishalantsov.com/bodywork#business"
         },
-        "affiliation": {
+        "founder": {
           "@id": "https://mishalantsov.com/denver-movement-school#organization"
         }
       },
@@ -49,23 +49,81 @@
         "@type": "LocalBusiness",
         "@id": "https://mishalantsov.com/bodywork#business",
         "name": "Misha Bodywork and Movement",
+        "description": "Therapeutic bodywork in Golden, Colorado for pain, tension, injuries, stress, and recurring movement patterns.",
         "url": "https://mishalantsov.com/bodywork",
+        "telephone": "+1-720-577-5964",
+        "priceRange": "$125-$165",
         "founder": {
           "@id": "https://mishalantsov.com/#misha-lantsov"
         },
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "1300 Jackson St, Suite B200",
+          "streetAddress": "1300 Jackson St, Suite B200, Room 6",
           "addressLocality": "Golden",
           "addressRegion": "CO",
           "postalCode": "80401",
           "addressCountry": "US"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Golden"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Sunday",
+            "opens": "08:30",
+            "closes": "13:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Monday",
+            "opens": "15:30",
+            "closes": "20:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Tuesday",
+            "opens": "13:30",
+            "closes": "17:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "https://schema.org/Thursday",
+            "opens": "15:30",
+            "closes": "20:00"
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Therapeutic Bodywork Sessions",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "price": "125",
+              "priceCurrency": "USD",
+              "itemOffered": {"@type": "Service", "name": "60 Minute Therapeutic Bodywork"}
+            },
+            {
+              "@type": "Offer",
+              "price": "145",
+              "priceCurrency": "USD",
+              "itemOffered": {"@type": "Service", "name": "75 Minute Therapeutic Bodywork"}
+            },
+            {
+              "@type": "Offer",
+              "price": "165",
+              "priceCurrency": "USD",
+              "itemOffered": {"@type": "Service", "name": "90 Minute Therapeutic Bodywork"}
+            }
+          ]
         }
       },
       {
-        "@type": "Organization",
+        "@type": "EducationalOrganization",
         "@id": "https://mishalantsov.com/denver-movement-school#organization",
         "name": "Denver Movement School",
+        "description": "Adult movement education in Denver through classes and practice cycles focused on strength, coordination, athleticism, adaptability, and movement practice.",
         "url": "https://mishalantsov.com/denver-movement-school",
         "founder": {
           "@id": "https://mishalantsov.com/#misha-lantsov"
