@@ -54,7 +54,18 @@
   overflow: hidden;
   border-radius: 24px;
   isolation: isolate;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+.home-portal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .home-portal:hover {
@@ -71,7 +82,6 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 1.15rem 1.3rem;
-  border-bottom: 1px solid rgba(39,33,27,.12);
   font-family: 'DM Mono', monospace;
   font-size: .54rem;
   line-height: 1.4;
@@ -118,20 +128,32 @@
   border-bottom: 1px solid currentColor;
 }
 
-/* BODYWORK PORTAL — same paper/clay/serif language as the Bodywork page. */
+/* BODYWORK PORTAL — real bodywork image with the warm paper/clay treatment. */
 .portal-bodywork {
   color: var(--ink);
-  background:
-    radial-gradient(circle at 76% 20%, rgba(155,98,72,.12), transparent 28%),
-    linear-gradient(155deg, #fffaf3 0%, #f5efe6 52%, #eadfd2 100%);
+  background-image: url('images/partnerbodywork.jpeg');
+  background-position: center 42%;
   border: 1px solid var(--line);
-  box-shadow: 0 20px 60px rgba(69,51,38,.07);
+  box-shadow: 0 20px 60px rgba(69,51,38,.10);
+}
+
+.portal-bodywork::before {
+  background:
+    linear-gradient(to top, rgba(245,239,230,.99) 0%, rgba(245,239,230,.92) 28%, rgba(245,239,230,.30) 64%, rgba(245,239,230,.08) 100%),
+    linear-gradient(135deg, rgba(155,98,72,.10), transparent 55%);
 }
 
 .portal-bodywork:hover {
   color: var(--ink);
   border-color: rgba(155,98,72,.45);
-  box-shadow: 0 24px 65px rgba(69,51,38,.11);
+  box-shadow: 0 24px 65px rgba(69,51,38,.14);
+}
+
+.portal-bodywork .portal-topline {
+  color: rgba(39,33,27,.72);
+  border-bottom: 1px solid rgba(39,33,27,.12);
+  background: rgba(251,247,240,.58);
+  backdrop-filter: blur(5px);
 }
 
 .portal-bodywork .portal-kicker {
@@ -142,91 +164,59 @@
   color: #655b51;
 }
 
-.bodywork-field {
-  position: absolute;
-  inset: 72px 0 0;
-}
-
-.bodywork-field::before {
-  content: '';
-  position: absolute;
-  left: 8%;
-  top: 13%;
-  width: 58%;
-  height: 1px;
-  background: rgba(155,98,72,.28);
-  transform: rotate(-12deg);
-  transform-origin: left center;
-  box-shadow: 0 72px 0 rgba(155,98,72,.16), 0 144px 0 rgba(155,98,72,.10);
-}
-
+.bodywork-field,
 .bodywork-orbit {
-  position: absolute;
-  border: 1px solid rgba(155,98,72,.23);
-  border-radius: 50%;
-}
-
-.orbit-one {
-  width: 290px;
-  height: 290px;
-  right: -34px;
-  top: 8%;
-}
-
-.orbit-two {
-  width: 200px;
-  height: 200px;
-  right: 68px;
-  top: 18%;
-}
-
-.orbit-three {
-  width: 104px;
-  height: 104px;
-  right: 116px;
-  top: 25%;
-  background: rgba(155,98,72,.055);
+  display: none;
 }
 
 .bodywork-content {
-  background: linear-gradient(to top, rgba(245,239,230,.98) 0%, rgba(245,239,230,.92) 64%, rgba(245,239,230,0) 100%);
+  background: linear-gradient(to top, rgba(245,239,230,.98) 0%, rgba(245,239,230,.90) 66%, rgba(245,239,230,0) 100%);
   padding-top: 7rem;
 }
 
-/* DMS PORTAL — dark, graphic, kinetic, deliberately different from the rest of the site. */
+/* DMS PORTAL — real movement image with a dark, graphic DMS treatment. */
 .portal-dms {
   color: #f3f1eb;
-  background: #11110f;
+  background-image: url('images/sprint.png');
+  background-position: center center;
   border: 1px solid #2a2a25;
-  box-shadow: 0 20px 65px rgba(0,0,0,.15);
+  box-shadow: 0 20px 65px rgba(0,0,0,.18);
+}
+
+.portal-dms::before {
+  background:
+    linear-gradient(to top, rgba(10,10,9,.98) 0%, rgba(10,10,9,.80) 30%, rgba(10,10,9,.32) 65%, rgba(10,10,9,.12) 100%),
+    linear-gradient(110deg, rgba(0,0,0,.16), rgba(0,0,0,.02));
 }
 
 .portal-dms:hover {
   color: #fff;
   border-color: #4a4a42;
-  box-shadow: 0 26px 72px rgba(0,0,0,.22);
+  box-shadow: 0 26px 72px rgba(0,0,0,.24);
 }
 
 .dms-topline {
-  color: rgba(255,255,255,.66);
-  border-bottom-color: rgba(255,255,255,.14);
+  color: rgba(255,255,255,.76);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+  background: rgba(12,12,11,.34);
+  backdrop-filter: blur(4px);
 }
 
 .dms-grid {
   position: absolute;
   inset: 0;
-  z-index: -1;
-  opacity: .52;
+  z-index: 1;
+  opacity: .28;
   background-image:
-    linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px);
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
   background-size: 42px 42px;
-  mask-image: linear-gradient(to bottom, #000 0%, #000 66%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 100%);
 }
 
 .dms-display {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   top: 14%;
   left: clamp(1.3rem, 3vw, 2.4rem);
   right: 1rem;
@@ -238,7 +228,8 @@
   line-height: .78;
   letter-spacing: -.075em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.92);
+  color: rgba(255,255,255,.84);
+  mix-blend-mode: screen;
   transform: skewY(-4deg);
   transform-origin: left center;
 }
@@ -246,7 +237,7 @@
 .dms-display span:nth-child(2) {
   margin-left: 6%;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(255,255,255,.7);
+  -webkit-text-stroke: 1px rgba(255,255,255,.65);
 }
 
 .dms-display span:nth-child(3) {
@@ -254,12 +245,12 @@
 }
 
 .dms-content {
-  background: linear-gradient(to top, rgba(17,17,15,1) 0%, rgba(17,17,15,.94) 64%, rgba(17,17,15,0) 100%);
+  background: linear-gradient(to top, rgba(10,10,9,.98) 0%, rgba(10,10,9,.90) 64%, rgba(10,10,9,0) 100%);
   padding-top: 8rem;
 }
 
 .portal-dms .portal-kicker {
-  color: rgba(255,255,255,.56);
+  color: rgba(255,255,255,.62);
 }
 
 .portal-dms .portal-content h2 {
@@ -270,7 +261,7 @@
 }
 
 .portal-dms .portal-content p {
-  color: rgba(255,255,255,.72);
+  color: rgba(255,255,255,.78);
 }
 
 .portal-dms .portal-enter {
@@ -339,25 +330,16 @@
     min-height: 540px;
   }
 
+  .portal-bodywork {
+    background-position: center center;
+  }
+
+  .portal-dms {
+    background-position: 52% center;
+  }
+
   .dms-display {
     top: 16%;
     font-size: clamp(3rem, 16vw, 5rem);
-  }
-
-  .orbit-one {
-    width: 230px;
-    height: 230px;
-  }
-
-  .orbit-two {
-    width: 155px;
-    height: 155px;
-    right: 46px;
-  }
-
-  .orbit-three {
-    width: 82px;
-    height: 82px;
-    right: 82px;
   }
 }
