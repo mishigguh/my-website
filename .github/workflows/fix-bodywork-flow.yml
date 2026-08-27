@@ -1,0 +1,30 @@
+name: Fix bodywork flow
+
+on:
+  push:
+    branches:
+      - seo-chatgpt-discovery-foundation
+    paths:
+      - .github/workflows/fix-bodywork-flow.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: seo-chatgpt-discovery-foundation
+          fetch-depth: 0
+      - name: Clean bodywork flow
+        run: python .github/scripts/fix_bodywork_flow.py
+      - name: Commit cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- bodywork.html
+          git rm -- .github/workflows/fix-bodywork-flow.yml .github/scripts/fix_bodywork_flow.py
+          git commit -m "Simplify bodywork offer flow"
+          git push origin HEAD:seo-chatgpt-discovery-foundation
