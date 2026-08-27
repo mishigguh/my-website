@@ -131,7 +131,7 @@
 /* BODYWORK PORTAL — real bodywork image with the warm paper/clay treatment. */
 .portal-bodywork {
   color: var(--ink);
-  background-image: url('images/partnerbodywork.jpeg');
+  background-image: url('images/treatment-room.webp');
   background-position: center 42%;
   border: 1px solid var(--line);
   box-shadow: 0 20px 60px rgba(69,51,38,.10);
@@ -177,7 +177,7 @@
 /* DMS PORTAL — real movement image with a dark, graphic DMS treatment. */
 .portal-dms {
   color: #f3f1eb;
-  background-image: url('images/sprint.png');
+  background-image: url('images/dms-jump.webp');
   background-position: center center;
   border: 1px solid #2a2a25;
   box-shadow: 0 20px 65px rgba(0,0,0,.18);
