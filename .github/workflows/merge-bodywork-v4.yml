@@ -1,0 +1,32 @@
+name: Merge bodywork V4 landing
+
+on:
+  push:
+    branches:
+      - seo-chatgpt-discovery-foundation
+    paths:
+      - .github/workflows/merge-bodywork-v4.yml
+
+permissions:
+  contents: write
+
+jobs:
+  merge-bodywork:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: seo-chatgpt-discovery-foundation
+          fetch-depth: 0
+
+      - name: Merge uploaded V4 flow with current bodywork offer
+        run: python .github/scripts/merge_bodywork_v4.py
+
+      - name: Commit merged bodywork page
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- bodywork.html
+          git rm -- .github/workflows/merge-bodywork-v4.yml .github/scripts/merge_bodywork_v4.py
+          git commit -m "Merge bodywork V4 flow with starter process"
+          git push origin HEAD:seo-chatgpt-discovery-foundation
