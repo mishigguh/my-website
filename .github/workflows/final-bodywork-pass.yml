@@ -1,0 +1,32 @@
+name: Final bodywork copy pass
+
+on:
+  push:
+    branches:
+      - seo-chatgpt-discovery-foundation
+    paths:
+      - .github/workflows/final-bodywork-pass.yml
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: seo-chatgpt-discovery-foundation
+
+      - name: Apply requested edits
+        run: python .github/scripts/final_bodywork_pass.py
+
+      - name: Commit changes and remove temporary files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          rm -f .github/scripts/final_bodywork_pass.py .github/workflows/final-bodywork-pass.yml
+          git add bodywork.html index.html .github/scripts/final_bodywork_pass.py .github/workflows/final-bodywork-pass.yml
+          git commit -m "Finalize 4-Session Intensive copy and links"
+          git push origin HEAD:seo-chatgpt-discovery-foundation
