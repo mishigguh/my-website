@@ -1,0 +1,30 @@
+name: Restore embedded bodywork booking
+
+on:
+  push:
+    branches:
+      - seo-chatgpt-discovery-foundation
+    paths:
+      - .github/workflows/restore-embedded-booking.yml
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: seo-chatgpt-discovery-foundation
+          fetch-depth: 0
+      - name: Restore embedded booking block
+        run: python .github/scripts/restore_embedded_booking.py
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- bodywork.html
+          git rm -- .github/scripts/restore_embedded_booking.py .github/workflows/restore-embedded-booking.yml
+          git commit -m "Restore embedded Acuity booking block"
+          git push origin HEAD:seo-chatgpt-discovery-foundation
