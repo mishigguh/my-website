@@ -430,7 +430,7 @@
 
   .classes-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 760px);
     gap: 1.5rem;
     margin-top: 3rem;
   }
@@ -1000,7 +1000,6 @@
   <a href="#" class="nav-mark">Denver Movement School</a>
   <ul class="nav-links">
     <li><a href="#classes">Classes</a></li>
-    <li><a href="#cohort">Practice Cycle</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#manifesto">About</a></li>
   </ul>
@@ -1044,17 +1043,7 @@
         </div>
         <a class="btn btn-fill" href="https://movementandbodywork.as.me/DMS" target="_blank" rel="noopener">Reserve a Spot →</a>
       </div>
-      <div class="class-card reveal">
-        <div class="card-when">Monday and Thursday Morning · June–July</div>
-        <div class="card-title">Sprint &amp;<br>Athletics</div>
-        <div class="card-desc">Speed, power, elastic strength, conditioning, and the athletic foundations of movement practice. Small group training built around sprinting, breathing, recovery, and repeated exposure.</div>
-        <div class="card-tags">
-          <span class="tag">Early Morning</span>
-          <span class="tag">Outdoors</span>
-          <span class="tag">Ongoing</span>
-        </div>
-        <a class="btn btn-fill" href="https://movementandbodywork.as.me/sprint" target="_blank" rel="noopener">See the Tracks →</a>
-      </div>
+
     </div>
   </div>
 </section>
@@ -1119,66 +1108,6 @@
 </section>
 
 <!-- COHORT -->
-<section class="cohort" id="cohort">
-  <div class="cohort-bg-word">CYCLE</div>
-  <div class="cohort-inner">
-    <div class="reveal">
-      <div class="cohort-badge">Enrolling for Fall</div>
-      <div class="cohort-title">Full<br>Practice<br>Cycle</div>
-      <div class="cohort-body">A structured training block across all six pillars — strength, rhythm, athletics, partnering, acrobatics, and inner work. Four sessions a week, eight weeks, a small cohort of people serious about developing a real practice. This is the school in full form.</div>
-      <a class="btn btn-bone" href="https://chat.whatsapp.com/LbkzP0HVdyxJH1XbaASFUs" target="_blank" rel="noopener">Join the Interest List →</a>
-    </div>
-    <div class="reveal">
-      <div class="cohort-specs">
-        <div>
-          <div class="spec-label">Duration</div>
-          <div class="spec-value">8 Weeks</div>
-        </div>
-        <div>
-          <div class="spec-label">Sessions</div>
-          <div class="spec-value">4× / Week</div>
-        </div>
-        <div>
-          <div class="spec-label">Group Size</div>
-          <div class="spec-value">Max 12</div>
-        </div>
-        <div>
-          <div class="spec-label">Details</div>
-          <div class="spec-value">List First</div>
-        </div>
-      </div>
-      <div class="commit-bar-bg">
-        <div class="commit-bar-fill" id="commitFill"></div>
-      </div>
-      <div class="commit-note">Schedule and pricing released first to the interest list</div>
-      <div class="cohort-pillars">
-        <div class="cohort-pillar-item">Strength, mobility, breath, and conditioning</div>
-        <div class="cohort-pillar-item">Sprinting, jumping, climbing, and locomotion</div>
-        <div class="cohort-pillar-item">Rhythm, dance, improvisation, and expression</div>
-        <div class="cohort-pillar-item">Partner work, contact, feedback, and problem-solving</div>
-        <div class="cohort-pillar-item">Falling, inversion, acrobatics, and edge work</div>
-        <div class="cohort-pillar-item">Attention, failure, agency, and return</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OPEN DAY -->
-<section class="openday">
-  <div class="openday-inner">
-    <div class="reveal">
-      <div class="section-tag" style="margin-bottom:1.5rem;">Coming This Summer</div>
-      <div class="openday-title">Open<br>Movement<br>Day</div>
-      <div class="openday-body">A free community gathering for people who want to move, meet the school, and feel the practice directly. Multiple teachers, multiple disciplines, one afternoon of shared training. Open to all levels. Date to be announced.</div>
-      <a class="btn btn-ghost" href="https://chat.whatsapp.com/LbkzP0HVdyxJH1XbaASFUs" target="_blank" rel="noopener">Join for Updates →</a>
-    </div>
-    <div class="openday-aside reveal">
-      <div class="openday-free">Free</div>
-      <div class="openday-sub">Donation welcome<br>All levels<br>All bodies</div>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="contact-inner">
@@ -1229,15 +1158,6 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => obs.observe(el));
 
-  // Cohort commitment bar
-  const cohortEl = document.getElementById('cohort');
-  const barObs = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      setTimeout(() => { document.getElementById('commitFill').style.width = '30%'; }, 500);
-      barObs.unobserve(cohortEl);
-    }
-  }, { threshold: 0.2 });
-  barObs.observe(cohortEl);
 
   // Glitch cycling word
   const words = ['learning.', 'growing.', 'mapping.', 'developing.', 'creating.', 'becoming.'];
