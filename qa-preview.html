@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Misha Website QA Preview</title>
+  <style>
+    body{font:16px/1.5 system-ui,sans-serif;margin:0;padding:3rem;color:#222;background:#f5f1ea}
+    .status{max-width:42rem;margin:10vh auto}
+  </style>
+</head>
+<body>
+  <p class="status" id="status">Loading the reviewed GitHub commit…</p>
+  <script>
+  (() => {
+    const sourceCommit = "c5e5a0b3384a7c1ca9274bb024605d559598cd56";
+    const previewBase = "https://raw.githack.com/mishigguh/my-website/qa-preview-seo-chatgpt-discovery-foundation/qa-preview.html";
+    const assetBase = "https://raw.githack.com/mishigguh/my-website/" + sourceCommit + "/";
+    const rawBase = "https://raw.githubusercontent.com/mishigguh/my-website/" + sourceCommit + "/";
+    const pages = new Map([
+      ["/", "index.html"],
+      ["/bodywork", "bodywork.html"],
+      ["/denver-movement-school", "denver-movement-school.html"],
+      ["/writing", "writing.html"],
+      ["/beyond-exercise", "beyond-exercise.html"],
+      ["/rethinking-posture", "rethinking-posture.html"]
+    ]);
+
+    const requested = new URLSearchParams(location.search).get("page") || "/";
+    const route = requested === "/" ? "/" : "/" + requested.replace(/^\/+/, "");
+    const file = pages.get(route);
+    const currentPreview = previewBase + (route === "/" ? "" : "?page=" + encodeURIComponent(route));
+
+    if (!file) {
+      document.getElementById("status").textContent = "That preview page does not exist.";
+      return;
+    }
+
+    fetch(rawBase + file, {cache: "no-store"})
+      .then(response => {
+        if (!response.ok) throw new Error("GitHub returned " + response.status);
+        return response.text();
+      })
+      .then(html => {
+        const parsed = new DOMParser().parseFromString(html, "text/html");
+        const base = parsed.createElement("base");
+        base.href = assetBase;
+        parsed.head.prepend(base);
+
+        const robots = parsed.createElement("meta");
+        robots.name = "robots";
+        robots.content = "noindex,nofollow";
+        parsed.head.append(robots);
+
+        parsed.querySelectorAll("a[href]").forEach(link => {
+          const href = link.getAttribute("href");
+          if (!href) return;
+          if (href.startsWith("#")) {
+            link.setAttribute("href", currentPreview + href);
+            return;
+          }
+          if (!href.startsWith("/") || href.startsWith("//")) return;
+          const hashAt = href.indexOf("#");
+          const path = hashAt === -1 ? href : href.slice(0, hashAt);
+          const hash = hashAt === -1 ? "" : href.slice(hashAt);
+          if (!pages.has(path)) return;
+          link.setAttribute("href", previewBase + (path === "/" ? "" : "?page=" + encodeURIComponent(path)) + hash);
+        });
+
+        document.open();
+        document.write("<!doctype html>\n" + parsed.documentElement.outerHTML);
+        document.close();
+      })
+      .catch(error => {
+        document.getElementById("status").textContent = "Preview failed to load: " + error.message;
+      });
+  })();
+  </script>
+</body>
+</html>
