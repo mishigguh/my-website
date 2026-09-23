@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&amp;family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=20260923-process">
   <style>
     .bw-hero{padding:clamp(4rem,9vw,7rem) 0 clamp(3.5rem,7vw,5.5rem)}
@@ -47,6 +48,7 @@
     @media(max-width:900px){.process-loop{grid-template-columns:1fr 150px 1fr}.loop-center{width:136px;height:136px}.loop-track{inset:8% 16%}}
     @media(max-width:800px){body{padding-bottom:68px}.narrative-grid,.video-shell,.fit-grid,.role-grid,.reviews{grid-template-columns:1fr}.video-placeholder{min-height:0}.process-loop{display:flex;flex-direction:column;gap:.8rem}.loop-track,.loop-center{display:none}.loop-card{padding:1.2rem}.loop-card .loop-arrow{position:static;margin:1rem auto -.25rem;transform:rotate(90deg)!important}.learn-grid,.outcomes{grid-template-columns:1fr}.booking-head,.booking-fallback{align-items:flex-start;flex-direction:column}.scheduler,.scheduler iframe{min-height:860px}.mobile-booking{display:block;position:fixed;left:0;right:0;bottom:0;z-index:100;padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));background:rgba(39,33,27,.96)}.mobile-booking a{display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:999px;background:var(--clay);color:var(--white);font-family:'DM Mono',monospace;font-size:.62rem;text-transform:uppercase;letter-spacing:.12em}.nav-links a:not(:last-child){display:none}}
   </style>
+  <link rel="stylesheet" href="bodywork-notebook.css?v=20260923-compare">
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -59,7 +61,7 @@
   }
   </script>
 </head>
-<body>
+<body class="notebook">
   <nav class="site-nav" aria-label="Primary navigation">
     <a class="nav-mark" href="/">Misha Bodywork &amp; Movement</a>
     <div class="nav-links"><a href="#process">Process</a><a href="#four-sessions">4 Sessions</a><a href="#fit">Good Fit</a><a href="#reviews">Reviews</a><a href="#location">Location</a><a href="#booking">Book</a></div>
@@ -68,10 +70,18 @@
   <main>
     <header class="bw-hero">
       <div class="wrap bw-hero-inner">
-        <span class="eyebrow">Bodywork + Movement · Downtown Golden, Colorado</span>
-        <h1>Feel better. Understand more. Become less dependent on treatment.</h1>
-        <p class="lead">Hands-on bodywork and movement education for pain, recurring tension, injury, or feeling limited in your body.</p>
-        <div class="actions"><a class="btn btn-primary" href="#booking">Start with 4 Sessions</a><a class="btn btn-secondary" href="#process">See the Process</a></div>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Bodywork + Movement · Downtown Golden, Colorado</span>
+            <h1>Feel better. Understand more. Become less dependent on treatment.</h1>
+            <p class="lead">Hands-on bodywork and movement education for pain, recurring tension, injury, or feeling limited in your body.</p>
+            <div class="actions"><a class="btn btn-primary" href="#booking">Start with 4 Sessions</a><a class="btn btn-secondary" href="#process">See the Process</a></div>
+            <div class="hero-proof" aria-label="Practice details"><span>7 years of hands-on experience</span><span>Bodywork + movement education</span><span>Golden, Colorado</span></div>
+          </div>
+          <div class="hero-media media-placeholder" role="img" aria-label="Reserved space for a bodywork session photograph">
+            <span class="media-index">Image / 01</span><span class="media-cross" aria-hidden="true"></span><span class="media-label">Reserved for a real session photograph</span>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -104,6 +114,12 @@
     <section class="bw-section" id="process">
       <div class="wrap">
         <div class="process-intro"><span class="section-heading">The Process</span><h2 class="section-title">Notice. Test. Adapt. Integrate.</h2><p class="lead">This is not a straight line or a fixed protocol. It is a repeating loop that helps us learn what changes, build more options, and see what holds up outside the session.</p></div>
+        <div class="contact-sheet" aria-label="Reserved spaces for four sequential process photographs">
+          <div class="contact-frame"><span>Frame / 01</span><span>Notice</span></div>
+          <div class="contact-frame"><span>Frame / 02</span><span>Test</span></div>
+          <div class="contact-frame"><span>Frame / 03</span><span>Adapt</span></div>
+          <div class="contact-frame"><span>Frame / 04</span><span>Integrate</span></div>
+        </div>
         <div class="process-loop" aria-label="Notice, Test, Adapt, Integrate process loop">
           <div class="loop-track" aria-hidden="true"></div>
           <div class="loop-center"><span>Learn<br>adjust<br>repeat</span></div>
@@ -185,7 +201,10 @@
     </section>
 
     <section class="bw-section" id="about">
-      <div class="wrap split"><div><span class="section-heading">About Me</span><h2 class="section-title">Hands-on experience informed by movement study.</h2></div><div><p>I’m Misha Lantsov, a bodyworker, movement educator, and founder of Denver Movement School. I have seven years of hands-on massage and bodywork experience, am myofascial-release certified, and work with athletes and movers of all body types and experience levels.</p><p>I currently study Human Movement Studies with Marcello Palozzo and train and teach with the Ape Co community in Boulder. That background lets me look at how bodywork and movement are connected—and how both are essential to changing your experience in your body.</p><div class="actions"><a class="btn btn-secondary" href="/about">More About Misha</a></div></div></div>
+      <div class="wrap about-layout">
+        <div class="about-media media-placeholder" role="img" aria-label="Reserved space for a portrait or teaching photograph"><span class="media-index">Image / 02</span><span class="media-cross" aria-hidden="true"></span><span class="media-label">Reserved for portrait or teaching photograph</span></div>
+        <div class="about-copy"><span class="section-heading">About Me</span><h2 class="section-title">Hands-on experience informed by movement study.</h2><p>I’m Misha Lantsov, a bodyworker, movement educator, and founder of Denver Movement School. I have seven years of hands-on massage and bodywork experience, am myofascial-release certified, and work with athletes and movers of all body types and experience levels.</p><p>I currently study Human Movement Studies with Marcello Palozzo and train and teach with the Ape Co community in Boulder. That background lets me look at how bodywork and movement are connected—and how both are essential to changing your experience in your body.</p><div class="actions"><a class="btn btn-secondary" href="/about">More About Misha</a></div></div>
+      </div>
     </section>
 
     <section class="bw-section" id="booking">
