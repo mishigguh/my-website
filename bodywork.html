@@ -36,6 +36,13 @@
     .faq{display:grid;gap:.65rem}details{background:rgba(255,250,243,.7);border:1px solid var(--line);border-radius:16px;padding:1rem 1.1rem}summary{cursor:pointer;color:var(--ink);font-weight:700}details p{margin:.7rem 0 0}
     .final-cta{background:var(--ink);color:var(--white);padding:clamp(3rem,6vw,5rem) 0}.final-cta h2{color:var(--white)}.final-cta p{color:rgba(255,250,243,.72)}
     .mobile-booking{display:none}
+    @media(min-width:901px){
+      .bw-section,.final-cta{width:100%;margin-left:0;margin-right:0}
+      .bw-hero-inner,.bw-section>.wrap,.final-cta>.wrap{width:min(1120px,calc(100% - 6rem))}
+      .bw-hero-inner{max-width:1120px}
+      .bw-hero .lead{max-width:840px}
+      .offer-card{max-width:none}
+    }
     @media(max-width:800px){body{padding-bottom:68px}.process-grid,.fit-grid,.reviews{grid-template-columns:1fr}.booking-head,.booking-fallback{align-items:flex-start;flex-direction:column}.scheduler,.scheduler iframe{min-height:860px}.mobile-booking{display:block;position:fixed;left:0;right:0;bottom:0;z-index:100;padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));background:rgba(39,33,27,.96)}.mobile-booking a{display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:999px;background:var(--clay);color:var(--white);font-family:'DM Mono',monospace;font-size:.62rem;text-transform:uppercase;letter-spacing:.12em}}
   </style>
   <script type="application/ld+json">
