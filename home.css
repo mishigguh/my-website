@@ -525,7 +525,7 @@
 
 @media (max-width: 390px) {
   .home-practice-heading {
-    font-size: clamp(2rem, 9.8vw, 2.45rem);
+    font-size: clamp(1.65rem, 8.3vw, 2.1rem);
   }
 
   .way-meta {
