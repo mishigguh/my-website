@@ -185,7 +185,7 @@
 }
 
 .movement-way .way-image img {
-  object-position: center 52%;
+  object-position: center 62%;
   filter: grayscale(100%);
   animation-delay: -7s;
 }
