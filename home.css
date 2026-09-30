@@ -1,37 +1,71 @@
-/* Homepage-only presentation. The rest of the site continues to use style.css. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  --home-paper: #ece8df;
+  --home-ink: #272422;
+  --home-rust: #9a4b36;
+  --home-line: #bdb7ac;
+  --home-muted: #645e56;
+  --home-cream: #f7f3eb;
+}
+
+.home-page {
+  background: var(--home-paper) !important;
+  color: var(--home-ink) !important;
+}
+
 .home-page .site-nav {
   position: relative;
 }
 
 .home-wrap {
-  width: min(1240px, calc(100% - clamp(2rem, 6vw, 5.5rem)));
+  width: min(1180px, calc(100% - clamp(2rem, 6vw, 5.5rem)));
   margin: 0 auto;
 }
 
 .home-intro {
   display: grid;
-  grid-template-columns: minmax(0, .92fr) minmax(300px, .72fr);
-  gap: clamp(2.5rem, 8vw, 8rem);
-  align-items: end;
-  padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(2.6rem, 5vw, 4rem);
+  grid-template-columns: minmax(0, 1.16fr) minmax(300px, .84fr);
+  gap: clamp(2.5rem, 7vw, 7rem);
+  align-items: center;
+  padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(3.5rem, 7vw, 6rem);
 }
 
-.home-intro-title h1 {
-  max-width: 700px;
+.home-intro-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 720px;
+}
+
+.home-practice-heading {
+  max-width: 720px;
   margin: 0;
-  font-size: clamp(2.45rem, 5.15vw, 4.75rem);
-  line-height: 1.01;
-  letter-spacing: -.04em;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2.25rem, 5.2vw, 4.65rem);
+  font-weight: 400;
+  line-height: .92;
+  letter-spacing: -.035em;
+}
+
+.home-practice-heading span {
+  display: block;
+  color: var(--home-ink);
+  white-space: nowrap;
+}
+
+.home-practice-heading .accent {
+  color: var(--home-rust);
 }
 
 .home-intro-copy {
-  max-width: 490px;
-  padding-bottom: .15rem;
+  max-width: 570px;
+  margin-top: clamp(1.6rem, 4vw, 3rem);
 }
 
 .home-intro-copy .lead {
   margin-bottom: 1rem;
-  color: var(--ink);
+  color: var(--home-ink);
   font-size: clamp(1.02rem, 1.45vw, 1.16rem);
 }
 
@@ -41,274 +75,356 @@
   line-height: 1.72;
 }
 
-.home-portals {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1rem, 2vw, 1.5rem);
-  padding: 0 0 clamp(4rem, 8vw, 7rem);
-}
-
-.home-portal {
-  position: relative;
-  min-height: clamp(520px, 56vw, 690px);
+.home-intro-photo {
+  width: 100%;
+  max-width: 510px;
+  aspect-ratio: 1;
+  margin: 0;
+  min-height: 0;
+  justify-self: end;
+  align-self: center;
   overflow: hidden;
-  border-radius: 24px;
-  isolation: isolate;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--paper-soft);
 }
 
-.home-portal::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
+.home-intro-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 34%;
+  transform: scale(1.12);
+  filter: grayscale(1) contrast(1.03);
 }
 
-.home-portal:hover {
-  transform: translateY(-3px);
+.home-frame {
+  width: min(calc(100% - 64px), 1400px);
+  margin: 0 auto;
 }
 
-.portal-topline {
-  position: absolute;
-  z-index: 5;
-  top: 0;
-  left: 0;
-  right: 0;
+.ways {
+  padding: 76px 0 112px;
+  border-top: 1px solid var(--home-line);
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
+.section-heading {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
-  padding: 1.15rem 1.3rem;
-  font-family: 'DM Mono', monospace;
-  font-size: .54rem;
-  line-height: 1.4;
-  letter-spacing: .13em;
-  text-transform: uppercase;
+  align-items: end;
+  gap: 30px;
+  margin-bottom: 34px;
 }
 
-.portal-content {
-  position: absolute;
-  z-index: 6;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: clamp(1.55rem, 3.5vw, 2.6rem);
-}
-
-.portal-kicker,
-.portal-enter {
-  display: block;
-  font-family: 'DM Mono', monospace;
-  text-transform: uppercase;
-  letter-spacing: .15em;
-  font-size: .56rem;
-}
-
-.portal-content h2 {
-  margin: .65rem 0 .85rem;
-  font-size: clamp(2.35rem, 4.1vw, 4.35rem);
-  line-height: .98;
-  letter-spacing: -.045em;
-}
-
-.portal-content p {
-  max-width: 470px;
+.section-heading h2,
+.notes h2 {
   margin: 0;
-  font-size: clamp(.88rem, 1.1vw, .98rem);
-  line-height: 1.68;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -.027em;
 }
 
-.portal-enter {
-  width: fit-content;
-  margin-top: 1.4rem;
-  padding-bottom: .25rem;
-  border-bottom: 1px solid currentColor;
+.section-heading h2 {
+  font-size: clamp(3.4rem, 5vw, 6rem);
+  line-height: 1;
 }
 
-/* BODYWORK PORTAL — real bodywork image with the warm paper/clay treatment. */
-.portal-bodywork {
-  color: var(--ink);
-  background-image: url('images/treatment-room.webp');
-  background-position: center 42%;
-  border: 1px solid var(--line);
-  box-shadow: 0 20px 60px rgba(69,51,38,.10);
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  color: var(--home-rust);
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
 }
 
-.portal-bodywork::before {
-  background:
-    linear-gradient(to top, rgba(245,239,230,.99) 0%, rgba(245,239,230,.92) 28%, rgba(245,239,230,.30) 64%, rgba(245,239,230,.08) 100%),
-    linear-gradient(135deg, rgba(155,98,72,.10), transparent 55%);
+.ways-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
 }
 
-.portal-bodywork:hover {
-  color: var(--ink);
-  border-color: rgba(155,98,72,.45);
-  box-shadow: 0 24px 65px rgba(69,51,38,.14);
-}
-
-.portal-bodywork .portal-topline {
-  color: rgba(39,33,27,.72);
-  border-bottom: 1px solid rgba(39,33,27,.12);
-  background: rgba(251,247,240,.58);
-  backdrop-filter: blur(5px);
-}
-
-.portal-bodywork .portal-kicker {
-  color: var(--clay);
-}
-
-.portal-bodywork .portal-content p {
-  color: #655b51;
-}
-
-.bodywork-field,
-.bodywork-orbit {
-  display: none;
-}
-
-.bodywork-content {
-  background: linear-gradient(to top, rgba(245,239,230,.98) 0%, rgba(245,239,230,.90) 66%, rgba(245,239,230,0) 100%);
-  padding-top: 7rem;
-}
-
-/* DMS PORTAL — real movement image with a dark, graphic DMS treatment. */
-.portal-dms {
-  color: #f3f1eb;
-  background-image: url('images/dms-jump.webp');
-  background-position: center center;
-  border: 1px solid #2a2a25;
-  box-shadow: 0 20px 65px rgba(0,0,0,.18);
-}
-
-.portal-dms::before {
-  background:
-    linear-gradient(to top, rgba(10,10,9,.98) 0%, rgba(10,10,9,.80) 30%, rgba(10,10,9,.32) 65%, rgba(10,10,9,.12) 100%),
-    linear-gradient(110deg, rgba(0,0,0,.16), rgba(0,0,0,.02));
-}
-
-.portal-dms:hover {
-  color: #fff;
-  border-color: #4a4a42;
-  box-shadow: 0 26px 72px rgba(0,0,0,.24);
-}
-
-.dms-topline {
-  color: rgba(255,255,255,.76);
-  border-bottom: 1px solid rgba(255,255,255,.14);
-  background: rgba(12,12,11,.34);
-  backdrop-filter: blur(4px);
-}
-
-.dms-grid {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  opacity: .28;
-  background-image:
-    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
-  background-size: 42px 42px;
-  mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 100%);
-}
-
-.dms-display {
-  position: absolute;
-  z-index: 2;
-  top: 14%;
-  left: clamp(1.3rem, 3vw, 2.4rem);
-  right: 1rem;
+.way {
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  font-family: Arial Black, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: clamp(3.3rem, 6vw, 7rem);
-  font-weight: 900;
-  line-height: .78;
-  letter-spacing: -.075em;
+  border: 1px solid var(--home-ink);
+  color: var(--home-ink);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform .2s ease;
+}
+
+.way:hover {
+  color: inherit;
+  transform: translateY(-4px);
+}
+
+.way-image {
+  height: 290px;
+  margin: 0;
+  overflow: hidden;
+  background: #d5c8b7;
+}
+
+.way-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: way-image-breathe 14s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.bodywork-way .way-image img {
+  object-position: center 48%;
+}
+
+.movement-way .way-image img {
+  object-position: center 62%;
+  filter: grayscale(100%);
+  animation-delay: -7s;
+}
+
+@keyframes way-image-breathe {
+  from { transform: scale(1.005); }
+  to { transform: scale(1.025); }
+}
+
+.way-copy {
+  min-height: 355px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 3.4vw, 48px);
+}
+
+.bodywork-way {
+  background: #e3d3c5;
+}
+
+.movement-way {
+  background: var(--home-ink);
+  color: var(--home-cream);
+}
+
+.way-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid currentColor;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  line-height: 1.35;
   text-transform: uppercase;
-  color: rgba(255,255,255,.84);
-  mix-blend-mode: screen;
-  transform: skewY(-4deg);
-  transform-origin: left center;
 }
 
-.dms-display span:nth-child(2) {
-  margin-left: 6%;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255,255,255,.65);
+.way-kind {
+  margin-top: 35px;
+  color: var(--home-rust);
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
 }
 
-.dms-display span:nth-child(3) {
-  margin-left: 15%;
+.movement-way .way-kind {
+  color: #d39782;
 }
 
-.dms-content {
-  background: linear-gradient(to top, rgba(10,10,9,.98) 0%, rgba(10,10,9,.90) 64%, rgba(10,10,9,0) 100%);
-  padding-top: 8rem;
+.way h3 {
+  margin: 8px 0 13px;
+  color: inherit;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(3rem, 4.2vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.027em;
 }
 
-.portal-dms .portal-kicker {
-  color: rgba(255,255,255,.62);
+.way p {
+  max-width: 510px;
+  margin: 0 0 24px;
+  color: inherit;
+  font-size: 1.02rem;
+  line-height: 1.55;
 }
 
-.portal-dms .portal-content h2 {
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 700 !important;
-  letter-spacing: -.045em;
+.way-link {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-bottom: 4px;
+  border-bottom: 1px solid currentColor;
+  font-size: .9rem;
+  font-weight: 700;
 }
 
-.portal-dms .portal-content p {
-  color: rgba(255,255,255,.78);
+.notes {
+  padding: 94px 0 106px;
+  background: var(--home-ink);
+  color: var(--home-cream);
+  font-family: 'DM Sans', Arial, sans-serif;
 }
 
-.portal-dms .portal-enter {
-  color: #fff;
+.notes-inner {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(40px, 7vw, 130px);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .home-portal { transition: none; }
+.notes .section-label {
+  color: #d39782;
+}
+
+.notes h2 {
+  margin: 25px 0;
+  color: var(--home-cream);
+  font-size: clamp(3.7rem, 5.3vw, 6.2rem);
+  line-height: 1;
+}
+
+.notes p {
+  max-width: 480px;
+  margin: 0;
+  color: #d5d0c8;
+  font-size: 1.08rem;
+}
+
+.plain-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid currentColor;
+  color: var(--home-cream);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.plain-link:hover {
+  color: #d39782;
+}
+
+.notes-list {
+  border-top: 1px solid #8b8580;
+}
+
+.notes-list a {
+  display: block;
+  padding: 30px 0;
+  border-bottom: 1px solid #8b8580;
+  color: var(--home-cream);
+  text-decoration: none;
+}
+
+.notes-list a:hover {
+  color: var(--home-cream);
+}
+
+.notes-list a:hover strong {
+  color: #d39782;
+}
+
+.notes-list span {
+  display: block;
+  margin-bottom: 13px;
+  color: #d39782;
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.notes-list strong {
+  display: block;
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(1.9rem, 2.7vw, 3.1rem);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.home-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-top: 36px;
+  padding-bottom: 45px;
+  font-family: 'DM Sans', Arial, sans-serif;
+}
+
+.home-footer strong,
+.home-footer span {
+  display: block;
+}
+
+.home-footer strong {
+  font-size: 1.05rem;
+}
+
+.home-footer span {
+  margin-top: 4px;
+  color: var(--home-muted);
+  font-size: .85rem;
+}
+
+.home-footer-links {
+  display: flex;
+  gap: 26px;
+}
+
+.home-footer-links a {
+  align-self: flex-start;
+  border-bottom: 1px solid currentColor;
+  font-size: .88rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 @media (max-width: 850px) {
   .home-intro {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.8rem;
     align-items: start;
-    padding: 3.2rem 0 2.5rem;
+    padding: 3.2rem 0 3.5rem;
   }
 
-  .home-intro-title h1 {
-    font-size: clamp(2.35rem, 10vw, 4rem);
+  .home-practice-heading {
+    font-size: clamp(2.4rem, 9.2vw, 4.3rem);
   }
 
   .home-intro-copy {
     max-width: 620px;
   }
 
-  .home-portals {
-    grid-template-columns: 1fr;
-    gap: .9rem;
-    padding-bottom: 4rem;
+  .home-intro-photo {
+    width: min(100%, 470px);
+    justify-self: start;
   }
 
-  .home-portal {
-    min-height: min(660px, 120vw);
-    border-radius: 19px;
+  .way-image {
+    height: clamp(210px, 30vw, 250px);
   }
 
-  .portal-content {
-    padding: 1.45rem;
+  .way-copy {
+    min-height: 380px;
   }
 
-  .portal-content h2 {
-    font-size: clamp(2.3rem, 10vw, 3.7rem);
+  .way-meta {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .way h3 {
+    font-size: clamp(2.35rem, 5.6vw, 3.8rem);
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 680px) {
   .home-wrap {
     width: calc(100% - 1.4rem);
   }
@@ -317,29 +433,120 @@
     padding-top: 2.7rem;
   }
 
-  .home-intro-title h1 br {
-    display: none;
+  .home-practice-heading {
+    font-size: clamp(2.15rem, 10.2vw, 3.2rem);
   }
 
-  .portal-topline {
-    padding: 1rem;
-    font-size: .49rem;
+  .home-intro-photo {
+    width: min(100%, 420px);
+    border-radius: 18px;
   }
 
-  .home-portal {
-    min-height: 540px;
+  .home-frame {
+    width: calc(100% - 1rem);
   }
 
-  .portal-bodywork {
-    background-position: center center;
+  .ways {
+    padding-top: 60px;
+    padding-bottom: 75px;
   }
 
-  .portal-dms {
-    background-position: 52% center;
+  .section-heading {
+    display: block;
+    margin-bottom: 24px;
   }
 
-  .dms-display {
-    top: 16%;
-    font-size: clamp(3rem, 16vw, 5rem);
+  .section-heading h2 {
+    margin-top: 16px;
+    font-size: clamp(2.65rem, 12vw, 3.8rem);
+  }
+
+  .ways-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(8px, 2.4vw, 14px);
+  }
+
+  .way-image {
+    height: clamp(130px, 36vw, 235px);
+  }
+
+  .way-copy {
+    min-height: 0;
+    padding: clamp(.7rem, 3.2vw, 1.1rem);
+  }
+
+  .way-meta {
+    min-height: 58px;
+    gap: 3px;
+    padding-bottom: 9px;
+    font-size: clamp(.48rem, 1.8vw, .6rem);
+    letter-spacing: .08em;
+  }
+
+  .way-kind {
+    margin-top: 18px;
+    font-size: clamp(.5rem, 1.8vw, .6rem);
+    letter-spacing: .1em;
+  }
+
+  .way h3 {
+    margin: 7px 0 10px;
+    font-size: clamp(1.65rem, 7.3vw, 2.55rem);
+    line-height: .95;
+    overflow-wrap: anywhere;
+  }
+
+  .way p {
+    margin-bottom: 17px;
+    font-size: clamp(.72rem, 2.65vw, .9rem);
+    line-height: 1.46;
+  }
+
+  .way-link {
+    font-size: clamp(.65rem, 2.25vw, .78rem);
+  }
+
+  .notes {
+    padding: 70px 0;
+  }
+
+  .notes-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .notes h2 {
+    font-size: 4rem;
+  }
+
+  .home-footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 390px) {
+  .home-practice-heading {
+    font-size: clamp(1.65rem, 8.3vw, 2.1rem);
+  }
+
+  .way-meta {
+    min-height: 68px;
+  }
+
+  .way h3 {
+    font-size: clamp(1.55rem, 7vw, 1.95rem);
+  }
+
+  .way p {
+    font-size: clamp(.7rem, 2.8vw, .78rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .way,
+  .way-image img {
+    animation: none;
+    transition: none;
   }
 }
