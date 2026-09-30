@@ -4,4 +4,7 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: OAI-AdsBot
+Allow: /
+
 Sitemap: https://mishalantsov.com/sitemap.xml
