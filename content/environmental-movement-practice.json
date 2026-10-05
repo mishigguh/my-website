@@ -1,41 +1,177 @@
 {
   "title": "Environmental Movement Practice",
-  "groups": [
+  "subtitle": "Individualized movement education built around real environments, physical capacity, technical skill, and creative exploration.",
+  "system": [
+    "Environmental Movement Practice is a phase-based movement education system built around real environments, not controlled gym conditions alone.",
+    "We design individualized phases of work using the terrain, tools, and movement opportunities available to the student. A phase may include parkour tasks, jumping and landing drills, acrobatic work, strength and physical preparation, rolling, climbing, and more open creative exploration.",
+    "The student receives written prescriptions and demonstration videos, practices the material independently, and sends back footage of key drills, lines, and benchmarks. We review the footage, give precise feedback, adjust the constraints, and build the next step of the process.",
+    "This makes the practice structured without becoming rigid, and exploratory without becoming random."
+  ],
+  "loop": [
     {
-      "id": "jumping",
-      "title": "Jumping & lightness",
-      "description": "Jumping coordination, landing quality, and lightness, developed through technical practice and environmental tasks."
+      "title": "Environment + Student",
+      "icon": "environment"
     },
     {
-      "id": "rolling",
-      "title": "Rolling & ground skills",
-      "description": "Rolling contact and transitions between the ground and standing movement."
+      "title": "Phase Design",
+      "icon": "design"
+    },
+    {
+      "title": "Practice Material",
+      "icon": "material"
+    },
+    {
+      "title": "Training in the Wild",
+      "icon": "jumping"
+    },
+    {
+      "title": "Video Review",
+      "icon": "review"
+    },
+    {
+      "title": "Refinement + Next Phase",
+      "icon": "refinement"
+    }
+  ],
+  "steps": [
+    {
+      "title": "Assess the terrain and the mover",
+      "description": "We look at what the student has available: rocks, logs, walls, bars, branches, slopes, open space, and the current capacities and interests they bring to the work."
+    },
+    {
+      "title": "Build a phase of practice",
+      "description": "Each phase organizes the work into clear categories: technical drills, environmental tasks, strength work, movement lines, and exploratory practice."
+    },
+    {
+      "title": "Practice independently",
+      "description": "You train independently in your real environment."
+    },
+    {
+      "title": "Film key pieces",
+      "description": "Film drills, benchmarks, and movement lines — the most revealing parts of the work."
+    },
+    {
+      "title": "Review and refine",
+      "description": "We review the footage and respond with cues, corrections, demonstrations, and sometimes entirely new constraints that sharpen the task."
+    },
+    {
+      "title": "Progress and repeat",
+      "description": "The work evolves through clearer movement, stronger positions, softer landings, better coordination, more environmental confidence, and milestone completion. Each round becomes the basis for the next phase."
+    }
+  ],
+  "groups": [
+    {
+      "id": "environment",
+      "title": "Environmental Parkour",
+      "icon": "environment",
+      "description": "Route finding, stepping patterns, environmental lines, obstacle negotiation, and the ability to move through built and natural spaces with clarity and adaptability."
+    },
+    {
+      "id": "jumping",
+      "title": "Jumping & Landing",
+      "icon": "jumping",
+      "description": "Jump phases, precision jumps, landing mechanics, elastic rebounding, arm timing, trajectory control, and the ability to express force cleanly."
     },
     {
       "id": "acrobatics",
-      "title": "Acrobatics & hand balancing",
-      "description": "Hand balancing, acrobatic shapes, weight transfer, and rotation."
+      "title": "Acrobatics & Inversion",
+      "icon": "acrobatics",
+      "description": "Wall-supported handstands, kickups, cartwheel catches, inversion shapes, shoulder organization, and free association through acrobatic patterns."
     },
     {
       "id": "preparedness",
-      "title": "Physical preparedness",
-      "description": "Strength and physical capacity that support a broader movement practice."
+      "title": "Physical Preparation / Strength",
+      "icon": "strength",
+      "description": "Whole-body strength work that supports skill expression: split squats, pushup variations, elastic strength tasks, loaded work, and later pulling and mantling capacity."
     },
     {
-      "id": "footwork",
-      "title": "Footwork & coordination",
-      "description": "Stepping patterns and whole-body coordination, connected into continuous movement."
+      "id": "rolling",
+      "title": "Rolling & Ground Contact",
+      "icon": "rolling",
+      "description": "Forward rolls, contact organization, absorbing force through the body, and learning how the ground can become part of fluent movement rather than an interruption."
     },
     {
-      "id": "environment",
-      "title": "Environmental parkour & exploration",
-      "description": "Movement tasks and creative exploration using outdoor and built environments."
+      "id": "climbing",
+      "title": "Climbing / Pulling / Traversal",
+      "icon": "climbing",
+      "description": "Using bars, rings, branches, rocks, and ledges to build pulling strength, climb onto the environment, mantle, descend with control, and expand what routes become possible."
     },
     {
-      "id": "presence",
-      "title": "Presence & inner practice",
-      "description": "Awareness of the body and the environment, with room for curiosity and enjoyment."
+      "id": "creative",
+      "title": "Creative Integration",
+      "icon": "creative",
+      "description": "Free association, rhythm work, dynamic variation, movement lines, and the ability to synthesize techniques into living movement rather than isolated drills."
     }
   ],
+  "formats": [
+    {
+      "title": "Drills",
+      "description": "Focused technical work used to sharpen one pattern or one quality at a time."
+    },
+    {
+      "title": "Strength Sets",
+      "description": "Physical preparation that builds the capacity to express movement more powerfully and more reliably."
+    },
+    {
+      "title": "Benchmarks",
+      "description": "Clear repeatable tasks that let us measure progress without reducing the whole practice to numbers."
+    },
+    {
+      "title": "Lines",
+      "description": "Short sequences through the environment that connect multiple skills into a coherent route."
+    },
+    {
+      "title": "Free Association",
+      "description": "Open rounds where the student integrates material more creatively and reveals what is becoming natural."
+    },
+    {
+      "title": "Environmental Tasks",
+      "description": "Movement problems shaped by the terrain itself: a wall, a curb, a rock, a ledge, a branch, or a line through space."
+    }
+  ],
+  "milestone_intro": "Progress in this system is not abstract. Each phase can include simple milestones that make development visible.",
+  "milestones": [
+    {
+      "title": "Standing jump phases",
+      "criterion": "6 clear consecutive reps"
+    },
+    {
+      "title": "Precision jump",
+      "criterion": "3 consecutive successful landings"
+    },
+    {
+      "title": "Forward roll",
+      "criterion": "3 clean reps per side"
+    },
+    {
+      "title": "Stepping free association",
+      "criterion": "1 minute with all patterns integrated"
+    },
+    {
+      "title": "Wall-supported handstand",
+      "criterion": "repeated one-minute sets"
+    },
+    {
+      "title": "Kickups",
+      "criterion": "consecutive successful holds in each shape"
+    },
+    {
+      "title": "Cartwheel catches",
+      "criterion": "consecutive successful holds in each shape"
+    },
+    {
+      "title": "Acrobatic free association",
+      "criterion": "60–90 seconds with skills shown clearly on both sides"
+    }
+  ],
+  "difference": [
+    "This is not generic fitness programming, and it is not a static video library.",
+    "The work is built around the student’s actual environment, actual practice, and actual movement questions. It combines technical precision with creative exploration. It treats strength, skill, coordination, perception, and adaptability as connected. And it evolves through direct feedback rather than staying frozen as a one-size-fits-all plan."
+  ],
+  "cta": {
+    "heading": "Interested in This Kind of Practice?",
+    "body": "Environmental Movement Practice is for people who want a deeper, more individualized relationship to movement — one that develops real capacity, real skill, and real adaptability in the environments they actually inhabit.",
+    "button": "Ask About Coaching"
+  },
   "practices": []
 }
