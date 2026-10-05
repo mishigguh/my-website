@@ -1,0 +1,41 @@
+{
+  "title": "Environmental Movement Practice",
+  "groups": [
+    {
+      "id": "jumping",
+      "title": "Jumping & lightness",
+      "description": "Jumping coordination, landing quality, and lightness, developed through technical practice and environmental tasks."
+    },
+    {
+      "id": "rolling",
+      "title": "Rolling & ground skills",
+      "description": "Rolling contact and transitions between the ground and standing movement."
+    },
+    {
+      "id": "acrobatics",
+      "title": "Acrobatics & hand balancing",
+      "description": "Hand balancing, acrobatic shapes, weight transfer, and rotation."
+    },
+    {
+      "id": "preparedness",
+      "title": "Physical preparedness",
+      "description": "Strength and physical capacity that support a broader movement practice."
+    },
+    {
+      "id": "footwork",
+      "title": "Footwork & coordination",
+      "description": "Stepping patterns and whole-body coordination, connected into continuous movement."
+    },
+    {
+      "id": "environment",
+      "title": "Environmental parkour & exploration",
+      "description": "Movement tasks and creative exploration using outdoor and built environments."
+    },
+    {
+      "id": "presence",
+      "title": "Presence & inner practice",
+      "description": "Awareness of the body and the environment, with room for curiosity and enjoyment."
+    }
+  ],
+  "practices": []
+}
