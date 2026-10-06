@@ -193,3 +193,57 @@
 }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 @media print { .site-nav,.emp-index,.emp-draft { display:none; } .emp-page { background:white!important; } }
+
+
+/* Funnel / proof additions */
+.emp-hero-copy{max-width:900px;margin-bottom:2rem}
+.emp-hero-copy h1{font-size:clamp(3.2rem,7vw,6.2rem);line-height:.92;letter-spacing:-.04em;margin:.75rem 0 1.3rem}
+.emp-hero-promise{font-family:'Instrument Serif',Georgia,serif;font-size:clamp(1.8rem,3.4vw,3rem)!important;line-height:1.08!important;color:var(--emp-ink)!important;max-width:960px;margin:0 0 1.1rem}
+.emp-hero-support{font-size:clamp(1.02rem,1.5vw,1.22rem)!important;max-width:760px}
+.emp-hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem;margin:1.2rem 0 2rem}
+.emp-hero-actions .emp-coaching-button,.emp-hero-actions .emp-text-link{margin-top:0}
+.emp-problem{padding-top:clamp(4rem,8vw,7rem)}
+.emp-contrast-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--emp-line)}
+.emp-contrast-grid article{padding:1.7rem 1.7rem 1.7rem 0;border-bottom:1px solid var(--emp-line)}
+.emp-contrast-grid article+article{padding-left:1.7rem;border-left:1px solid var(--emp-line)}
+.emp-contrast-grid span{display:block;font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;color:var(--emp-muted);margin-bottom:.8rem}
+.emp-contrast-grid h3{font-size:1.2rem;margin-bottom:.7rem}
+.emp-contrast-grid strong{display:block;margin-top:1.3rem;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--emp-rust)}
+.emp-contrast-grid p{font-size:.92rem}
+.emp-proof{background:var(--emp-cream);width:100%!important;max-width:none!important;padding-inline:max(calc((100vw - 1180px)/2),clamp(1rem,3vw,2.75rem));border-block:1px solid var(--emp-line)}
+.emp-case-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:1.4rem}
+.emp-media-slot{margin:0}
+.emp-media-placeholder{min-height:280px;border:1px dashed #aaa39a;background:rgba(255,255,255,.35);display:flex;flex-direction:column;justify-content:flex-end;gap:.45rem;padding:1.4rem}
+.emp-media-slot-wide .emp-media-placeholder{min-height:390px}
+.emp-media-placeholder span{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.1em;color:var(--emp-rust)}
+.emp-media-placeholder strong{font-size:1rem;font-weight:500;color:var(--emp-ink)}
+.emp-media-placeholder small{font-size:.8rem;line-height:1.5;color:var(--emp-muted)}
+.emp-media-slot figcaption{font-size:.78rem;line-height:1.5;color:var(--emp-muted);padding-top:.7rem}
+.emp-proof-note{display:grid;grid-template-columns:1.5fr 1fr;gap:2rem;margin-top:2rem;padding-top:1.4rem;border-top:1px solid var(--emp-line)}
+.emp-proof-note p{font-size:.9rem}
+.emp-muted-note{color:var(--emp-muted)}
+.emp-coach-grid{display:grid;grid-template-columns:minmax(280px,.85fr) 1.15fr;gap:clamp(2rem,6vw,5rem);align-items:center}
+.emp-coach-photo .emp-media-placeholder{min-height:420px}
+.emp-coach-copy h3{font-size:1.35rem;margin-bottom:1rem}
+.emp-coach-copy p{max-width:680px}
+.emp-coach-note{border-top:1px solid var(--emp-line);padding-top:1rem;margin-top:1.5rem;font-size:.85rem!important}
+.emp-offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin:2rem 0;max-width:760px}
+.emp-offer-grid>div{border-top:1px solid #b9b1a5;padding-top:1rem}
+.emp-offer-grid strong{color:var(--emp-ink);font-weight:600}
+.emp-offer-grid ul{padding-left:1.2rem;margin:.7rem 0 0}
+.emp-offer-grid li{font-size:.92rem;color:var(--emp-muted)}
+.emp-inquiry-prompt{font-size:.95rem!important;max-width:720px!important;border-top:1px solid #b9b1a5;padding-top:1rem}
+@media(max-width:900px){
+ .emp-contrast-grid{grid-template-columns:1fr}
+ .emp-contrast-grid article+article{padding-left:0;border-left:0}
+ .emp-case-grid{grid-template-columns:1fr 1fr}
+ .emp-media-slot-wide{grid-column:1/-1}
+ .emp-coach-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+ .emp-hero-copy h1{font-size:clamp(2.8rem,12vw,4.5rem)}
+ .emp-hero-promise{font-size:clamp(1.65rem,7vw,2.3rem)!important}
+ .emp-case-grid,.emp-proof-note,.emp-coach-grid,.emp-offer-grid{grid-template-columns:1fr}
+ .emp-media-slot-wide{grid-column:auto}
+ .emp-media-slot-wide .emp-media-placeholder,.emp-coach-photo .emp-media-placeholder{min-height:300px}
+}
